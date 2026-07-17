@@ -14,7 +14,7 @@ export default function CategoryPage() {
   const params = useParams();
   const router = useRouter();
   const { isAuthenticated } = useAuthStore();
-  const slug = params.slug as string;
+  const slug = params?.slug as string;
   const [items, setItems] = useState<Content[]>([]);
   const [category, setCategory] = useState<Category | null>(null);
   const [loading, setLoading] = useState(true);

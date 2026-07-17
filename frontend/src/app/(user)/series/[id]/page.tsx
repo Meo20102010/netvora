@@ -32,7 +32,7 @@ export default function SeriesDetailPage() {
   const router = useRouter();
   const { user } = useAuthStore();
   const isAuthenticated = !!user;
-  const id = params.id as string;
+  const id = params?.id as string;
 
   const [content, setContent] = useState<Content | null>(null);
   const [recommendations, setRecommendations] = useState<Content[]>([]);

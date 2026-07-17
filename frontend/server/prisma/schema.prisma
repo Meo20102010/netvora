@@ -1,0 +1,512 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String   @id @default(uuid())
+  email             String   @unique
+  password          String
+  username          String   @unique
+  displayName       String?
+  avatar            String?
+  role              String   @default("USER")
+  isVerified        Boolean  @default(false)
+  isBanned          Boolean  @default(false)
+  banReason         String?
+  verificationToken String?
+  resetToken        String?
+  resetTokenExpiry  DateTime?
+  refreshToken      String?
+  lastLoginAt       DateTime?
+  lastLoginIp       String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  profiles         Profile[]
+  subscriptions    Subscription[]
+  watchHistory     WatchHistory[]
+  favorites        Favorite[]
+  watchLater       WatchLater[]
+  ratings          Rating[]
+  notifications    Notification[]
+  paymentHistory   Payment[]
+  ibanPayments     IbanPayment[]
+  auditLogs        AuditLog[]
+  loginHistory     LoginHistory[]
+  sessions         UserSession[]
+  comments         Comment[]
+  reactions        Reaction[]
+  hostedParties    WatchParty[]
+  partyParticipations WatchPartyParticipant[]
+  followers        Follow[] @relation("Follower")
+  following        Follow[] @relation("Following")
+  userBadges       UserBadge[]
+  userStats        UserStats?
+  aiRecommendations AIRecommendation[]
+
+  @@map("users")
+}
+
+model Profile {
+  id        String   @id @default(uuid())
+  userId    String
+  name      String
+  avatar    String?
+  isChild   Boolean  @default(false)
+  pinCode   String?
+  language  String   @default("tr")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user         User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  watchHistory WatchHistory[]
+  favorites    Favorite[]
+  watchLater   WatchLater[]
+  ratings      Rating[]
+
+  @@map("profiles")
+}
+
+model Subscription {
+  id          String   @id @default(uuid())
+  userId      String
+  packageName String   @default("Premium")
+  price       Float
+  currency    String   @default("TRY")
+  startDate   DateTime
+  endDate     DateTime
+  status      String   @default("ACTIVE")
+  autoRenew   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("subscriptions")
+}
+
+model Payment {
+  id              String   @id @default(uuid())
+  userId          String
+  amount          Float
+  currency        String   @default("TRY")
+  method          String   @default("whatsapp")
+  status          String   @default("pending")
+  whatsappMessage String?
+  adminNote       String?
+  processedBy     String?
+  processedAt     DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("payments")
+}
+
+model IbanPayment {
+  id              String   @id @default(uuid())
+  userId          String
+  amount          Float
+  currency        String   @default("TRY")
+  packageName     String
+  duration        Int
+  paymentCode     String   @unique
+  status          String   @default("PENDING")
+  iban            String?
+  receiptUrl      String?
+  receiptFilename String?
+  receiptData     String?
+  receiptMime     String?
+  adminNote       String?
+  approvedBy      String?
+  approvedAt      DateTime?
+  rejectedAt      DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@map("iban_payments")
+}
+
+model Category {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  image       String?
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  contents Content[]
+
+  @@map("categories")
+}
+
+model Content {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  description String?
+  type        String   @default("MOVIE")
+  posterUrl   String?
+  coverUrl    String?
+  trailerUrl  String?
+  year        Int?
+  duration    Int?
+  imdbRating  Float?
+  imdbVotes   Int?
+  director    String?
+  cast        String   @default("[]")
+  tags        String   @default("[]")
+  country     String?
+  language    String?
+  subtitle    String?
+  quality     String   @default("HD")
+  isActive    Boolean  @default(true)
+  isFeatured  Boolean  @default(false)
+  releaseDate DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  categoryId   String?
+  category     Category?     @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  seasons      Season[]
+  videos       Video[]
+  ratings      Rating[]
+  watchHistory WatchHistory[]
+  favorites    Favorite[]
+  watchLater   WatchLater[]
+  comments     Comment[]
+  reactions    Reaction[]
+  watchParties WatchParty[]
+  aiRecommendations AIRecommendation[]
+
+  @@map("contents")
+}
+
+model Season {
+  id            String   @id @default(uuid())
+  contentId     String
+  seasonNumber  Int
+  title         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  content  Content   @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  episodes Episode[]
+
+  @@map("seasons")
+}
+
+model Episode {
+  id            String   @id @default(uuid())
+  seasonId      String
+  episodeNumber Int
+  title         String
+  description   String?
+  duration      Int?
+  stillUrl      String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  season       Season         @relation(fields: [seasonId], references: [id], onDelete: Cascade)
+  videos       Video[]
+  watchHistory WatchHistory[]
+  comments     Comment[]
+
+  @@map("episodes")
+}
+
+model Video {
+  id        String   @id @default(uuid())
+  contentId String?
+  episodeId String?
+  url       String
+  quality   String   @default("HD")
+  language  String   @default("tr")
+  subtitle  String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  content Content? @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  episode Episode? @relation(fields: [episodeId], references: [id], onDelete: Cascade)
+
+  @@map("videos")
+}
+
+model WatchHistory {
+  id        String   @id @default(uuid())
+  userId    String
+  profileId String?
+  contentId String
+  episodeId String?
+  progress  Float    @default(0)
+  completed Boolean  @default(false)
+  watchedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  profile Profile? @relation(fields: [profileId], references: [id], onDelete: SetNull)
+  content Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  episode Episode? @relation(fields: [episodeId], references: [id], onDelete: SetNull)
+
+  @@map("watch_history")
+}
+
+model Favorite {
+  id        String   @id @default(uuid())
+  userId    String
+  profileId String?
+  contentId String
+  createdAt DateTime @default(now())
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  profile Profile? @relation(fields: [profileId], references: [id], onDelete: SetNull)
+  content Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, contentId])
+  @@map("favorites")
+}
+
+model WatchLater {
+  id        String   @id @default(uuid())
+  userId    String
+  profileId String?
+  contentId String
+  createdAt DateTime @default(now())
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  profile Profile? @relation(fields: [profileId], references: [id], onDelete: SetNull)
+  content Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, contentId])
+  @@map("watch_later")
+}
+
+model Rating {
+  id        String   @id @default(uuid())
+  userId    String
+  profileId String?
+  contentId String
+  score     Int
+  createdAt DateTime @default(now())
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  profile Profile? @relation(fields: [profileId], references: [id], onDelete: SetNull)
+  content Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, contentId])
+  @@map("ratings")
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  message   String
+  type      String   @default("info")
+  isRead    Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  userId     String?
+  action     String
+  resource   String
+  resourceId String?
+  details    String?
+  ipAddress  String?
+  userAgent  String?
+  createdAt  DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@map("audit_logs")
+}
+
+model LoginHistory {
+  id        String   @id @default(uuid())
+  userId    String
+  ipAddress String?
+  userAgent String?
+  success   Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("login_history")
+}
+
+model UserSession {
+  id           String   @id @default(uuid())
+  userId       String
+  token        String   @unique
+  refreshToken String   @unique
+  ipAddress    String?
+  userAgent    String?
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_sessions")
+}
+
+model SiteSetting {
+  id    String @id @default(uuid())
+  key   String @unique
+  value String
+  type  String @default("string")
+
+  @@map("site_settings")
+}
+
+model Translation {
+  id        String   @id @default(uuid())
+  key       String
+  language  String   @default("tr")
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([key, language])
+  @@map("translations")
+}
+
+model Banner {
+  id        String   @id @default(uuid())
+  title     String?
+  subtitle  String?
+  imageUrl  String
+  linkUrl   String?
+  sortOrder Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("banners")
+}
+
+model Comment {
+  id          String   @id @default(uuid())
+  userId      String
+  contentId   String
+  episodeId   String?
+  text        String
+  hasSpoiler  Boolean  @default(false)
+  isDeleted   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id])
+  content     Content  @relation(fields: [contentId], references: [id])
+  episode     Episode? @relation(fields: [episodeId], references: [id])
+  reactions   Reaction[]
+  @@unique([userId, contentId, episodeId])
+}
+
+model Reaction {
+  id          String   @id @default(uuid())
+  userId      String
+  commentId   String?
+  contentId   String?
+  emoji       String
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id])
+  comment     Comment? @relation(fields: [commentId], references: [id])
+  content     Content? @relation(fields: [contentId], references: [id])
+  @@unique([userId, commentId, contentId, emoji])
+}
+
+model WatchParty {
+  id          String   @id @default(uuid())
+  hostId      String
+  contentId   String
+  isActive    Boolean  @default(true)
+  startedAt   DateTime @default(now())
+  endedAt     DateTime?
+  host        User     @relation(fields: [hostId], references: [id])
+  content     Content  @relation(fields: [contentId], references: [id])
+  participants WatchPartyParticipant[]
+}
+
+model WatchPartyParticipant {
+  id          String      @id @default(uuid())
+  partyId     String
+  userId      String
+  joinedAt    DateTime    @default(now())
+  party       WatchParty  @relation(fields: [partyId], references: [id])
+  user        User        @relation(fields: [userId], references: [id])
+  @@unique([partyId, userId])
+}
+
+model Follow {
+  id          String   @id @default(uuid())
+  followerId  String
+  followingId String
+  createdAt   DateTime @default(now())
+  follower    User     @relation("Follower", fields: [followerId], references: [id])
+  following   User     @relation("Following", fields: [followingId], references: [id])
+  @@unique([followerId, followingId])
+}
+
+model UserBadge {
+  id        String   @id @default(uuid())
+  userId    String
+  badgeType String
+  earnedAt  DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  @@unique([userId, badgeType])
+}
+
+model UserStats {
+  id              String   @id @default(uuid())
+  userId          String   @unique
+  totalWatchTime  Int      @default(0)
+  moviesWatched   Int      @default(0)
+  seriesWatched   Int      @default(0)
+  episodesWatched Int      @default(0)
+  topGenre        String?
+  weeklyMinutes   Int      @default(0)
+  monthlyMinutes  Int      @default(0)
+  updatedAt       DateTime @updatedAt
+  user            User     @relation(fields: [userId], references: [id])
+}
+
+model Coupon {
+  id          String   @id @default(uuid())
+  code        String   @unique
+  discount    Int
+  discountType String  @default("percent")
+  maxUses     Int?
+  usedCount   Int      @default(0)
+  validFrom   DateTime @default(now())
+  expiresAt   DateTime?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model AIRecommendation {
+  id          String   @id @default(uuid())
+  userId      String
+  contentId   String
+  score       Float
+  reason      String
+  type        String
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id])
+  content     Content  @relation(fields: [contentId], references: [id])
+}

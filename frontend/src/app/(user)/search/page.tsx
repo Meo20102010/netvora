@@ -53,10 +53,10 @@ function SearchContent() {
     { value: '7', label: '7+' }, { value: '6', label: '6+' },
   ];
 
-  const initialQuery = searchParams.get('q') || '';
-  const initialType = searchParams.get('type') || '';
-  const initialYear = searchParams.get('year') || '';
-  const initialRating = searchParams.get('rating') || '';
+  const initialQuery = searchParams?.get('q') || '';
+  const initialType = searchParams?.get('type') || '';
+  const initialYear = searchParams?.get('year') || '';
+  const initialRating = searchParams?.get('rating') || '';
 
   const [query, setQuery] = useState(initialQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery);

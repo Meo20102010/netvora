@@ -31,11 +31,11 @@ export default function WatchPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { isAuthenticated } = useAuthStore();
-  const id = params.id as string;
+  const id = params?.id as string;
 
-  const episodeId = searchParams.get('episode');
-  const seasonParam = searchParams.get('season');
-  const initialProgress = searchParams.get('t') ? parseFloat(searchParams.get('t')!) : undefined;
+  const episodeId = searchParams?.get('episode') || null;
+  const seasonParam = searchParams?.get('season') || null;
+  const initialProgress = searchParams?.get('t') ? parseFloat(searchParams!.get('t')!) : undefined;
 
   const [content, setContent] = useState<Content | null>(null);
   const [currentEpisode, setCurrentEpisode] = useState<Episode | null>(null);

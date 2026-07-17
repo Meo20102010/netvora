@@ -119,7 +119,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     router.push('/login');
   };
 
-  const isActive = (href: string) => pathname.startsWith(href);
+  const isActive = (href: string) => pathname?.startsWith(href) ?? false;
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex">
