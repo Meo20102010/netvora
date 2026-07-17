@@ -11,6 +11,9 @@ export function proxyVideoUrl(url: string | undefined | null): string | undefine
     const path = url.startsWith('/') ? url : '/' + url;
     return '/api/proxy/vod' + path;
   }
+  if (url.includes('res.cloudinary.com') || url.includes('cloudfront.net') || url.includes('r2.cloudflarestorage.com') || url.includes('b-cdn.net') || url.includes('cdn.bunnycdn.com')) {
+    return url;
+  }
   if (url.startsWith('http')) return '/api/proxy/ext?url=' + encodeURIComponent(url);
   return url;
 }

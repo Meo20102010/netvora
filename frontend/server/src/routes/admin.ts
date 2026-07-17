@@ -54,7 +54,14 @@ router.post('/content/:id/seasons', auditLog('CREATE_SEASON', 'Season'), asyncHa
 
 router.post('/content/seasons/:id/episodes', auditLog('CREATE_EPISODE', 'Episode'), asyncHandler(async (req: AuthRequest, res: Response) => {
   const episode = await contentService.createEpisode(req.params.id, req.body.episodeNumber, req.body.title, req.body.description);
-  res.status(201).json({ success: true, data: episode, message: 'Bölüm oluşturuldu' });
+  if (req.body.videoUrl) {
+    const season = await prisma.season.findUnique({ where: { id: req.params.id } });
+    if (season) {
+      await prisma.video.create({ data: { episodeId: episode.id, url: req.body.videoUrl, quality: req.body.quality || 'HD', language: 'tr' } });
+    }
+  }
+  const updated = await prisma.episode.findUnique({ where: { id: episode.id }, include: { videos: true } });
+  res.status(201).json({ success: true, data: updated, message: 'Bölüm oluşturuldu' });
 }));
 
 router.delete('/content/episodes/:id', auditLog('DELETE_EPISODE', 'Episode'), asyncHandler(async (req: AuthRequest, res: Response) => {
