@@ -210,9 +210,17 @@ export default function SubscriptionPage() {
         return;
       }
       const paymentId = createRes.data.data.id;
-      const fd = new FormData();
-      fd.append('receipt', receiptFile);
-      const uploadRes = await ibanPaymentApi.uploadReceipt(paymentId, fd);
+      const base64 = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.onerror = () => reject(new Error('File read failed'));
+        reader.readAsDataURL(receiptFile);
+      });
+      const uploadRes = await ibanPaymentApi.uploadReceipt(paymentId, {
+        receiptData: base64,
+        receiptMime: receiptFile.type,
+        receiptFilename: receiptFile.name,
+      });
       if (!uploadRes.data.success) {
         toast.error('Dekont yuklenemedi');
         return;
