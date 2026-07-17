@@ -27,8 +27,16 @@ import { ibanPaymentRoutes } from './routes/ibanPayment';
 
 const app = express();
 
-// Security
-app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
+// Trust proxy (Vercel, Cloudflare, etc.)
+app.set('trust proxy', 1);
+
+// Security — disable Helmet on serverless (Vercel handles security headers)
+// Helmet can cause issues with Vercel's proxy headers
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: 'cross-origin' },
+  contentSecurityPolicy: false,
+}));
+
 app.use(cors({
   origin: true,
   credentials: true,
@@ -36,7 +44,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-// Parsing
+// Parsing — bodyParser: false in pages/api config lets Express handle this
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
