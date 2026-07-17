@@ -1,4 +1,4 @@
-const CACHE_NAME = 'netvora-v3';
+const CACHE_NAME = 'netvora-v4';
 const STATIC_ASSETS = [
   '/',
   '/browse',
