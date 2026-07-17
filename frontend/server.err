@@ -1,0 +1,609 @@
+ ⨯ upstream image response failed for https://img.fullhdfilmizlesene.life/poster/film/charlie-the-wonderdog-56775.jpg 503
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /movie/[id]:
+Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\webpack-runtime.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\.next\server\app\(user)\movie\[id]\page.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\load-components.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\build\utils.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\Wado2\OneDrive\Desktop\Tv\frontend\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\.next\\server\\app\\(user)\\movie\\[id]\\page.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\Wado2\\OneDrive\\Desktop\\Tv\\frontend\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}

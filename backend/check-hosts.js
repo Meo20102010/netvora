@@ -1,0 +1,1 @@
+const{PrismaClient}=require('@prisma/client');const p=new PrismaClient();(async()= all=await p.video.findMany({select:{url:true}});const hosts=new Set();let c=0;for(const v of all){try{const u=new URL(v.url);hosts.add(u.hostname);if(++c;}catch{hosts.add('invalid:'+v.url.substring(0,50))}}console.log('All unique video hosts:');[...hosts].sort().forEach(h= -',h));await p.();})()  

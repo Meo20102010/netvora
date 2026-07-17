@@ -1,0 +1,620 @@
+[
+  {
+    "slug": "www.radyod.com",
+    "title": "Radyo D",
+    "url": "https://www.radyod.com",
+    "poster": ""
+  },
+  {
+    "slug": "engelsiz.kanald.com.tr",
+    "title": "Engelsiz",
+    "url": "https://engelsiz.kanald.com.tr",
+    "poster": ""
+  },
+  {
+    "slug": "www.kanald.com.tr",
+    "title": "www.kanald.com.tr",
+    "url": "https://www.kanald.com.tr",
+    "poster": ""
+  },
+  {
+    "slug": "daha-17",
+    "title": "PAZAR 20.00\n                                                        \n                                                    \n                                                    \n                                                        Daha 17",
+    "url": "https://www.kanald.com.tr/daha-17",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/6a0b381b6857e013a393b7f9.jpg"
+  },
+  {
+    "slug": "uzak-sehir",
+    "title": "Uzak Şehir",
+    "url": "https://www.kanald.com.tr/uzak-sehir",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/68b725d5d62926e00edbc7bb.jpg"
+  },
+  {
+    "slug": "esref-ruya",
+    "title": "Eşref Rüya",
+    "url": "https://www.kanald.com.tr/esref-ruya",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/691366016b2d104147cf6e8f.jpg"
+  },
+  {
+    "slug": "arka-sokaklar",
+    "title": "Arka Sokaklar",
+    "url": "https://www.kanald.com.tr/arka-sokaklar",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/68c18335410eac5508f55011.jpg"
+  },
+  {
+    "slug": "guller-ve-gunahlar",
+    "title": "Güller ve Günahlar",
+    "url": "https://www.kanald.com.tr/guller-ve-gunahlar",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/68c83316f35cf5ba33dfcb33.jpg"
+  },
+  {
+    "slug": "askimemnu",
+    "title": "HAFTA İÇİ HER GÜN 16.45\n                                                        \n                                                    \n                                                    \n                                                        Aşk-ı Memnu",
+    "url": "https://www.kanald.com.tr/askimemnu",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/5d19e9dd4020112cf8a208b4.jpg"
+  },
+  {
+    "slug": "beyazla-joker",
+    "title": "Beyaz'la Joker",
+    "url": "https://www.kanald.com.tr/beyazla-joker",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/69679f1d4514ff3cabc3f24a.jpg"
+  },
+  {
+    "slug": "kuralsiz-sokaklar",
+    "title": "CUMA 20.00\n                                                        \n                                                    \n                                                    \n                                                        Kuralsız Sokaklar",
+    "url": "https://www.kanald.com.tr/kuralsiz-sokaklar",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/685414d9b85953a3a6d9df99.jpg"
+  },
+  {
+    "slug": "gelinim-mutfakta",
+    "title": "Gelinim Mutfakta",
+    "url": "https://www.kanald.com.tr/gelinim-mutfakta",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/66b08a5af03f5c8f215f0f79.jpg"
+  },
+  {
+    "slug": "neler-oluyor-hayatta",
+    "title": "Neler Oluyor Hayatta?",
+    "url": "https://www.kanald.com.tr/neler-oluyor-hayatta",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/68c18fc88b0ee3a869cbf026.jpg"
+  },
+  {
+    "slug": "ardanin-mutfagi",
+    "title": "Arda'nın Mutfağı",
+    "url": "https://www.kanald.com.tr/ardanin-mutfagi",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/61535cfe4453951504a95c64.jpg"
+  },
+  {
+    "slug": "arda-ile-omuz-omuza",
+    "title": "Arda ile Omuz Omuza",
+    "url": "https://www.kanald.com.tr/arda-ile-omuz-omuza",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/61535c5f4453951504a95c4b.jpg"
+  },
+  {
+    "slug": "kanal-d-ana-haber",
+    "title": "HAFTA İÇİ 19.00\n                                                        \n                                                    \n                                                    \n                                                        Kanal D Ana Haber",
+    "url": "https://www.kanald.com.tr/kanal-d-ana-haber",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/6a439d449b15a3cbd4002aba.jpg"
+  },
+  {
+    "slug": "kanal-d-haber-hafta-sonu",
+    "title": "HAFTA SONU 18.45\n                                                        \n                                                    \n                                                    \n                                                        Kanal D Haber Hafta Sonu",
+    "url": "https://www.kanald.com.tr/kanal-d-haber-hafta-sonu",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/6a43c7b29b15a3cbd4002bd0.jpg"
+  },
+  {
+    "slug": "magazin-d-yaz",
+    "title": "HAFTA İÇİ HER GÜN 13.00\n                                                        \n                                                    \n                                                    \n                                                        Magazin D Yaz",
+    "url": "https://www.kanald.com.tr/magazin-d-yaz",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/668269d80e55a65e086897c1.jpg"
+  },
+  {
+    "slug": "magazin-d-cumartesi",
+    "title": "CUMARTESİ 09.45\n                                                        \n                                                    \n                                                    \n                                                        Magazin D Cumartesi",
+    "url": "https://www.kanald.com.tr/magazin-d-cumartesi",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/68722884ff79654e7d12b5b1.jpg"
+  },
+  {
+    "slug": "magazin-d-pazar",
+    "title": "PAZAR 09.45\n                                                        \n                                                    \n                                                    \n                                                        Magazin D Pazar",
+    "url": "https://www.kanald.com.tr/magazin-d-pazar",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/6872297eff79654e7d12b629.jpg"
+  },
+  {
+    "slug": "konustukca",
+    "title": "CUMARTESİ -  PAZAR 08.30\n                                                        \n                                                    \n                                                    \n                                                        Konuştukça",
+    "url": "https://www.kanald.com.tr/konustukca",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/6930449f4c5d448b7df6a57f.jpg"
+  },
+  {
+    "slug": "pazar-gezmesi",
+    "title": "PAZAR 12:45\n                                                        \n                                                    \n                                                    \n                                                        Pazar Gezmesi",
+    "url": "https://www.kanald.com.tr/pazar-gezmesi",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/0x0/6943c72f4c5d448b7df6ba12.jpg"
+  },
+  {
+    "slug": "yabancidamat",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/70/96x68/5465e9c4cf45af133875abae.jpg\" alt=\"Yabanc&#x131; Damat\" />\n                                        \n                                        \n                                    \n                                    \n                                        Yabancı Damat\n                                        \n                                            07:00\n                                            YAYINDA",
+    "url": "https://www.kanald.com.tr/yabancidamat",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/96x68/5465e9c4cf45af133875abae.jpg"
+  },
+  {
+    "slug": "katakulli",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/70/96x68/633d42283ab16628f8065dfb.jpg\" alt=\"Katakulli\" />\n                                        \n                                        \n                                    \n                                    \n                                        Katakulli\n                                        \n                                            13:00\n                                            YAYINDA",
+    "url": "https://www.kanald.com.tr/sinemalar/katakulli",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/96x68/633d42283ab16628f8065dfb.jpg"
+  },
+  {
+    "slug": "pele-bir-efsanenin-dogusu",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/70/96x68/596c68666ce43626a015abee.jpg\" alt=\"Pele: Bir Efsanenin Do&#x11F;u&#x15F;u\" />\n                                        \n                                        \n                                    \n                                    \n                                        Pele: Bir Efsanenin Doğuşu\n                                        \n                                            20:00\n                                            YAYINDA",
+    "url": "https://www.kanald.com.tr/sinemalar/pele-bir-efsanenin-dogusu",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/96x68/596c68666ce43626a015abee.jpg"
+  },
+  {
+    "slug": "triyas-dunyasi",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/70/96x68/6871106cff79654e7d12b4a8.jpg\" alt=\"Triyas D&#xFC;nyas&#x131;\" />\n                                        \n                                        \n                                    \n                                    \n                                        Triyas Dünyası\n                                        \n                                            00:15\n                                            YAYINDA",
+    "url": "https://www.kanald.com.tr/sinemalar/triyas-dunyasi",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/96x68/6871106cff79654e7d12b4a8.jpg"
+  },
+  {
+    "slug": "kuzeyguney",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/70/96x68/5e8de25a933ccb264c4c2383.jpg\" alt=\"Kuzey G&#xFC;ney\" />\n                                        \n                                        \n                                    \n                                    \n                                        Kuzey Güney\n                                        \n                                            04:30\n                                            YAYINDA",
+    "url": "https://www.kanald.com.tr/kuzeyguney",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/96x68/5e8de25a933ccb264c4c2383.jpg"
+  },
+  {
+    "slug": "javascript:;",
+    "title": "javascript:;",
+    "url": "javascript:;",
+    "poster": ""
+  },
+  {
+    "slug": "login?returnUrl=%2Fdiziler",
+    "title": "login?returnUrl=%2Fdiziler",
+    "url": "https://www.kanald.com.tr/account/login?returnUrl=%2Fdiziler",
+    "poster": ""
+  },
+  {
+    "slug": "details",
+    "title": "Profilim",
+    "url": "https://www.kanald.com.tr/account/details",
+    "poster": ""
+  },
+  {
+    "slug": "arsiv",
+    "title": "TÜMÜNÜ GÖR",
+    "url": "https://www.kanald.com.tr/diziler/arsiv",
+    "poster": ""
+  },
+  {
+    "slug": "inci-taneleri",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/69f8f1072e1ebe9b5e9b8fb8.jpg\" alt=\"&#x130;nci Taneleri\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/inci-taneleri",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/69f8f1072e1ebe9b5e9b8fb8.jpg"
+  },
+  {
+    "slug": "hayat-sarkisi",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/682f34962d741ef4ddb25854.jpg\" alt=\"Hayat &#x15E;ark&#x131;s&#x131;\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/hayat-sarkisi",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/682f34962d741ef4ddb25854.jpg"
+  },
+  {
+    "slug": "vatanim-sensin",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/682f34a22d741ef4ddb25857.jpg\" alt=\"Vatan&#x131;m Sensin\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/vatanim-sensin",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/682f34a22d741ef4ddb25857.jpg"
+  },
+  {
+    "slug": "siyah-beyaz-ask",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/682f34b42d741ef4ddb2585b.jpg\" alt=\"Siyah Beyaz A&#x15F;k\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/siyah-beyaz-ask",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/682f34b42d741ef4ddb2585b.jpg"
+  },
+  {
+    "slug": "zalim-istanbul",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/682f34bd2d741ef4ddb2585d.jpg\" alt=\"Zalim &#x130;stanbul\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/zalim-istanbul",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/682f34bd2d741ef4ddb2585d.jpg"
+  },
+  {
+    "slug": "poyraz-karayel",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/682f34c82d741ef4ddb2585f.jpg\" alt=\"Poyraz Karayel\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/poyraz-karayel",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/682f34c82d741ef4ddb2585f.jpg"
+  },
+  {
+    "slug": "afili-ask",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/682f34d22d741ef4ddb25862.jpg\" alt=\"Afili A&#x15F;k\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/afili-ask",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/682f34d22d741ef4ddb25862.jpg"
+  },
+  {
+    "slug": "gunesin-kizlari",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/682f34dc2d741ef4ddb25864.jpg\" alt=\"G&#xFC;ne&#x15F;in K&#x131;zlar&#x131;\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/gunesin-kizlari",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/682f34dc2d741ef4ddb25864.jpg"
+  },
+  {
+    "slug": "fatmagulunsucune",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/682f34e52d741ef4ddb25867.jpg\" alt=\"Fatmag&#xFC;l&#x27;&#xFC;n Su&#xE7;u Ne?\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/fatmagulunsucune",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/682f34e52d741ef4ddb25867.jpg"
+  },
+  {
+    "slug": "hekimoglu",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/264x365/682f34ee2d741ef4ddb25869.jpg\" alt=\"Hekimo&#x11F;lu\" />\n                                                \n                                                \n                                             \n\n    \n        \n            \n                Takip Et",
+    "url": "https://www.kanald.com.tr/hekimoglu",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/264x365/682f34ee2d741ef4ddb25869.jpg"
+  },
+  {
+    "slug": "?template=colorbox&utm_source=medyanet-kanald&utm_medium=referral&utm_content=thumbnails-a-mid-article:Mid%20Article%20Thumbnails:",
+    "title": "Taboola'dan",
+    "url": "https://popup.taboola.com/tr/?template=colorbox&utm_source=medyanet-kanald&utm_medium=referral&utm_content=thumbnails-a-mid-article:Mid%20Article%20Thumbnails:",
+    "poster": ""
+  },
+  {
+    "slug": "6972519f58d89a1dbba8e518",
+    "title": "6972519f58d89a1dbba8e518",
+    "url": "https://trk.f2p-planet.com/6972519f58d89a1dbba8e518",
+    "poster": ""
+  },
+  {
+    "slug": "yeni-c5-aircross-hibrit",
+    "title": "yeni-c5-aircross-hibrit",
+    "url": "https://talep.citroen.com.tr/bilgi-talebi/yeni-c5-aircross-hibrit",
+    "poster": ""
+  },
+  {
+    "slug": "www.caddeyildiz.com",
+    "title": "www.caddeyildiz.com",
+    "url": "https://www.caddeyildiz.com",
+    "poster": ""
+  },
+  {
+    "slug": "2008.html",
+    "title": "2008.html",
+    "url": "https://www.peugeot.com.tr/peugeot-modelleri/2008.html",
+    "poster": ""
+  },
+  {
+    "slug": "register",
+    "title": "register",
+    "url": "https://tami.go.link/register",
+    "poster": ""
+  },
+  {
+    "slug": "orumcek-adam",
+    "title": "orumcek-adam",
+    "url": "https://www.kanald.com.tr/sinemalar/orumcek-adam",
+    "poster": ""
+  },
+  {
+    "slug": "%40kanald",
+    "title": "%40kanald",
+    "url": "https://sosyal.teknofest.app/%40kanald",
+    "poster": ""
+  },
+  {
+    "slug": "kanald",
+    "title": "kanald",
+    "url": "https://www.facebook.com/kanald",
+    "poster": ""
+  },
+  {
+    "slug": "@kanald",
+    "title": "@kanald",
+    "url": "https://www.youtube.com/@kanald",
+    "poster": ""
+  },
+  {
+    "slug": "details?id=kanald.view&hl=en",
+    "title": "details?id=kanald.view&hl=en",
+    "url": "https://play.google.com/store/apps/details?id=kanald.view&hl=en",
+    "poster": ""
+  },
+  {
+    "slug": "id515303474",
+    "title": "id515303474",
+    "url": "https://apps.apple.com/us/app/kanal-d-for-iphone/id515303474",
+    "poster": ""
+  },
+  {
+    "slug": "izleyici-temsilcisi",
+    "title": "İZLEYİCİ TEMSİLCİSİ",
+    "url": "https://www.kanald.com.tr/izleyici-temsilcisi",
+    "poster": ""
+  },
+  {
+    "slug": "iletisim",
+    "title": "İLETİŞİM",
+    "url": "https://www.kanald.com.tr/iletisim",
+    "poster": ""
+  },
+  {
+    "slug": "?site=kanald&referrer=http%3A%2F%2Fwww.kanald.com.tr%2Fdiziler",
+    "title": "HATA BİLDİR",
+    "url": "https://ticket.subservis.com/?site=kanald&referrer=http%3A%2F%2Fwww.kanald.com.tr%2Fdiziler",
+    "poster": ""
+  },
+  {
+    "slug": "www.tv2.com.tr",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/70x35/6955972b4514ff3cabc3e1d8.jpg\" alt=\"Teve2 - Footer Logo\" />",
+    "url": "https://www.tv2.com.tr",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/70x35/6955972b4514ff3cabc3e1d8.jpg"
+  },
+  {
+    "slug": "eurod.kanald.com.tr",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/70x35/5e9f02873ab16618dcfab351.jpg\" alt=\"EuroD - Footer Logo\" />",
+    "url": "https://eurod.kanald.com.tr",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/70x35/5e9f02873ab16618dcfab351.jpg"
+  },
+  {
+    "slug": "www.cnnturk.com",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/70x35/5e9f030e3ab16618dcfab35b.jpg\" alt=\"CNNT&#xDC;RK - Footer Logo\" />",
+    "url": "https://www.cnnturk.com",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/70x35/5e9f030e3ab16618dcfab35b.jpg"
+  },
+  {
+    "slug": "radyo",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/70x35/5e9f02e23ab16618dcfab356.jpg\" alt=\"CNNT&#xDC;RK Radyo - Footer Logo\" />",
+    "url": "https://www.cnnturk.com/radyo",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/70x35/5e9f02e23ab16618dcfab356.jpg"
+  },
+  {
+    "slug": "www.dreamtv.com.tr",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/70x35/5e9f02483ab16618dcfab347.jpg\" alt=\"Dream TV - Footer Logo\" />",
+    "url": "https://www.dreamtv.com.tr",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/70x35/5e9f02483ab16618dcfab347.jpg"
+  },
+  {
+    "slug": "www.dreamturk.com.tr",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/70x35/5e9f01c33ab16618dcfab342.jpg\" alt=\"Dreamt&#xFC;rk - Footer Logo\" />",
+    "url": "https://www.dreamturk.com.tr",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/70x35/5e9f01c33ab16618dcfab342.jpg"
+  },
+  {
+    "slug": "kanal-dnin-renkli-dunyasi-ekranda-uygulamasinda",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/70x35/5e9f057e3ab16618dcfab367.jpg\" alt=\"Kanal D&#x2019;nin renkli d&#xFC;nyas&#x131; EKRANDA uygulamas&#x131;nda!\" />",
+    "url": "https://www.kanald.com.tr/kanal-dnin-renkli-dunyasi-ekranda-uygulamasinda",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/70x35/5e9f057e3ab16618dcfab367.jpg"
+  },
+  {
+    "slug": "www.dsmart.com.tr",
+    "title": "<img src=\"https://image.kanald.com.tr/i/kanald/100/70x35/5eb90c443ab166311cbf5281.jpg\" alt=\"Dsmart - Footer Logo\" />",
+    "url": "https://www.dsmart.com.tr",
+    "poster": "https://image.kanald.com.tr/i/kanald/100/70x35/5eb90c443ab166311cbf5281.jpg"
+  },
+  {
+    "slug": "yayin-akisi",
+    "title": "Yayın Akışı",
+    "url": "https://www.kanald.com.tr/yayin-akisi",
+    "poster": ""
+  },
+  {
+    "slug": "basvurular",
+    "title": "Başvurular",
+    "url": "https://www.kanald.com.tr/basvurular",
+    "poster": ""
+  },
+  {
+    "slug": "foto-galeri",
+    "title": "Foto Galeri",
+    "url": "https://www.kanald.com.tr/foto-galeri",
+    "poster": ""
+  },
+  {
+    "slug": "haber",
+    "title": "Haber",
+    "url": "https://www.kanald.com.tr/haber",
+    "poster": ""
+  },
+  {
+    "slug": "sinemalar",
+    "title": "Sinemalar",
+    "url": "https://www.kanald.com.tr/sinemalar",
+    "poster": ""
+  },
+  {
+    "slug": "d-shorts-diziler",
+    "title": "D-Shorts",
+    "url": "https://www.kanald.com.tr/d-shorts-diziler",
+    "poster": ""
+  },
+  {
+    "slug": "yemek-tarifleri",
+    "title": "Yemek Tarifleri",
+    "url": "https://www.kanald.com.tr/yemek-tarifleri",
+    "poster": ""
+  },
+  {
+    "slug": "foto-galeriler",
+    "title": "Foto Galeri",
+    "url": "https://www.kanald.com.tr/foto-galeriler",
+    "poster": ""
+  },
+  {
+    "slug": "evde-sinema",
+    "title": "Sinemalar",
+    "url": "https://www.kanald.com.tr/evde-sinema",
+    "poster": ""
+  },
+  {
+    "slug": "daha-17-7-bolum-fragmani-2",
+    "title": "Daha 17 Fragmanı                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/daha-17/fragmanlar/daha-17-7-bolum-fragmani-2",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a4e7d40417d9a70a23d9101"
+  },
+  {
+    "slug": "kuralsiz-sokaklar-son-bolum",
+    "title": "Kuralsız Sokaklar                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/kuralsiz-sokaklar/bolumler/kuralsiz-sokaklar-son-bolum",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a51312d800655e3162c6b81"
+  },
+  {
+    "slug": "tanzanyada-galatasaray-taraftarlari",
+    "title": "Kuralsız Sokaklar Özel!                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/kuralsiz-sokaklar/ozel-klipler/tanzanyada-galatasaray-taraftarlari",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a513668800655e3162c6b92"
+  },
+  {
+    "slug": "mert-napolide-mutfaga-girerse",
+    "title": "Kuralsız Sokaklar Özel!                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/kuralsiz-sokaklar/ozel-klipler/mert-napolide-mutfaga-girerse",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a513d8b800655e3162c6ba1"
+  },
+  {
+    "slug": "kuralsiz-sokaklar-16-bolum-fragmani-2",
+    "title": "Kuralsız Sokaklar                                     \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/kuralsiz-sokaklar/fragmanlar/kuralsiz-sokaklar-16-bolum-fragmani-2",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a4e6ef6417d9a70a23d90fe"
+  },
+  {
+    "slug": "leyla-ve-aras-el-ele-goz-goze",
+    "title": "El ele, göz göze❤️                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/daha-17/ozel-klipler/leyla-ve-aras-el-ele-goz-goze",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a4a682311471b9efed16a76"
+  },
+  {
+    "slug": "kuralsiz-sokaklar-16-bolum-fragmani",
+    "title": "Kuralsız Sokaklar 💥                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/kuralsiz-sokaklar/fragmanlar/kuralsiz-sokaklar-16-bolum-fragmani",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a47f90911471b9efed168dc"
+  },
+  {
+    "slug": "daha-17-7-bolum-fragmani",
+    "title": "Manifest sürprizi!😍                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/daha-17/fragmanlar/daha-17-7-bolum-fragmani",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a4a9f5c11471b9efed16ad1"
+  },
+  {
+    "slug": "sebnem-arasin-kim-oldugunu-ogrendi",
+    "title": "Şebnem'i şok eden gerçek!                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/daha-17/ozel-klipler/sebnem-arasin-kim-oldugunu-ogrendi",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a4ab01111471b9efed16b56"
+  },
+  {
+    "slug": "aras-tanidik-geldi-mi",
+    "title": "Aras: Tanıdık geldi mi?                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/daha-17/ozel-klipler/aras-tanidik-geldi-mi",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a4a682a11471b9efed16a79"
+  },
+  {
+    "slug": "daha-17-son-bolum",
+    "title": "Daha 17 💥                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/daha-17/bolumler/daha-17-son-bolum",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a4a73d211471b9efed16ac0"
+  },
+  {
+    "slug": "taylandin-milli-serveti",
+    "title": "Tayland'ın milli serveti                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/kuralsiz-sokaklar/ozel-klipler/taylandin-milli-serveti",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a47f50711471b9efed168a7"
+  },
+  {
+    "slug": "kuralsiz-sokaklar-15-bolum",
+    "title": "Kuralsız Sokaklar                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/kuralsiz-sokaklar/bolumler/kuralsiz-sokaklar-15-bolum",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a4ba5fd417d9a70a23d9044"
+  },
+  {
+    "slug": "sokak-lezzeti-pismis-akrep",
+    "title": "Sokak lezzeti: Pişmiş Akrep!                                    \n                                \n                                YENİ",
+    "url": "https://www.kanald.com.tr/kuralsiz-sokaklar/ozel-klipler/sokak-lezzeti-pismis-akrep",
+    "poster": "https://image.kanald.com.tr/i/kanald/70/141x76/6a47f50811471b9efed168af"
+  },
+  {
+    "slug": "ali-sehit-oldu",
+    "title": "ali-sehit-oldu",
+    "url": "https://www.kanald.com.tr/arka-sokaklar/ozel-klipler/ali-sehit-oldu",
+    "poster": ""
+  },
+  {
+    "slug": "uygulamalarimiz",
+    "title": "Tüm Uygulamalarımız",
+    "url": "https://www.kanald.com.tr/uygulamalarimiz",
+    "poster": ""
+  },
+  {
+    "slug": "reklam",
+    "title": "REKLAM",
+    "url": "https://www.kanald.com.tr/reklam",
+    "poster": ""
+  },
+  {
+    "slug": "kunye",
+    "title": "KÜNYE",
+    "url": "https://www.kanald.com.tr/kunye",
+    "poster": ""
+  },
+  {
+    "slug": "kisisel-verilerin-korunmasi",
+    "title": "KİŞİSEL VERİLERİN KORUNMASI",
+    "url": "https://www.kanald.com.tr/kisisel-verilerin-korunmasi",
+    "poster": ""
+  },
+  {
+    "slug": "yardim",
+    "title": "YARDIM",
+    "url": "https://www.kanald.com.tr/yardim",
+    "poster": ""
+  },
+  {
+    "slug": "uydu-frekanslari",
+    "title": "Uydu Ayarları",
+    "url": "https://www.kanald.com.tr/uydu-frekanslari",
+    "poster": ""
+  },
+  {
+    "slug": "dizi-fragmanlari",
+    "title": "Dizi Fragmanları",
+    "url": "https://www.kanald.com.tr/dizi-fragmanlari",
+    "poster": ""
+  },
+  {
+    "slug": "veri-politikasi",
+    "title": "Çerez Politikası",
+    "url": "https://www.kanald.com.tr/veri-politikasi",
+    "poster": ""
+  },
+  {
+    "slug": "cookie-consent",
+    "title": "Powered by Onetrust",
+    "url": "https://www.onetrust.com/products/cookie-consent",
+    "poster": "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg"
+  },
+  {
+    "slug": "3008.html",
+    "title": "3008.html",
+    "url": "https://www.peugeot.com.tr/peugeot-modelleri/3008.html",
+    "poster": ""
+  },
+  {
+    "slug": "fiyat-teklifi-al.html",
+    "title": "fiyat-teklifi-al.html",
+    "url": "https://www.nissan.com.tr/fiyat-teklifi-al.html",
+    "poster": ""
+  },
+  {
+    "slug": "408.html",
+    "title": "408.html",
+    "url": "https://www.peugeot.com.tr/peugeot-modelleri/408.html",
+    "poster": ""
+  },
+  {
+    "slug": "6a21af475f8cf2377cf2d1bf",
+    "title": "6a21af475f8cf2377cf2d1bf",
+    "url": "https://trk.f2p-planet.com/6a21af475f8cf2377cf2d1bf",
+    "poster": ""
+  },
+  {
+    "slug": "e-faturaya-gecis-rehberi",
+    "title": "e-faturaya-gecis-rehberi",
+    "url": "https://isbasi.com/e-faturaya-gecis-rehberi",
+    "poster": ""
+  },
+  {
+    "slug": "pazar-gezmesi-31-bolum-fragmani",
+    "title": "pazar-gezmesi-31-bolum-fragmani",
+    "url": "https://www.kanald.com.tr/pazar-gezmesi/fragmanlar/pazar-gezmesi-31-bolum-fragmani",
+    "poster": ""
+  }
+]
