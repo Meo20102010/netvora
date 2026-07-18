@@ -103,6 +103,7 @@ export const authService = {
     if (!user) throw new AppError('E-posta veya şifre hatalı', 401);
     if (user.isBanned) throw new AppError('Hesabınız askıya alınmıştır', 403);
 
+    if (!user.password) throw new AppError('E-posta veya şifre hatalı', 401);
     const isValid = await bcrypt.compare(password, user.password);
     if (!isValid) throw new AppError('E-posta veya şifre hatalı', 401);
 
