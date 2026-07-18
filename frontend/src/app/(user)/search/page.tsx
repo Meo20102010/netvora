@@ -40,6 +40,7 @@ function SearchContent() {
     { id: '', label: t('search.all') || 'All' },
     { id: 'MOVIE', label: t('search.movies') || 'Films' },
     { id: 'SERIES', label: t('search.series') || 'Series' },
+    { id: 'ANIME', label: 'Anime' },
   ];
   const YEAR_FILTERS = [
     { value: '', label: 'All Years' }, { value: '2026', label: '2026' }, { value: '2025', label: '2025' },

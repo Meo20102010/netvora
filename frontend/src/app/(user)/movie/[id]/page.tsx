@@ -63,7 +63,7 @@ export default function MovieDetailPage() {
             router.replace('/browse');
             return;
           }
-          if (data.type !== 'MOVIE') {
+          if (data.type !== 'MOVIE' && data.type !== 'ANIME') {
             const route = data.type === 'SERIES' ? 'series' : 'movie';
             router.replace(`/${route}/${data.id}`);
             return;

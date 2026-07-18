@@ -138,7 +138,7 @@ export default function BrowsePage() {
             {continueWatching.length > 0 && (
               <motion.div variants={rowFade}>
                 <ContentRow
-                  title="Izlemeye Devam Et"
+                  title="İzlemeye Devam Et"
                   items={continueWatching}
                 />
               </motion.div>
@@ -146,7 +146,7 @@ export default function BrowsePage() {
 
             <motion.div variants={rowFade}>
               <ContentRow
-                title="Gundemdekiler"
+                title="Gündemdekiler"
                 items={trending}
                 loading={initialLoading}
               />
