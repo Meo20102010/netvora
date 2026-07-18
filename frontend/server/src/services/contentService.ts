@@ -120,19 +120,9 @@ export const contentService = {
 
     if (!content) throw new AppError('İçerik bulunamadı', 404);
 
-    // Remove seasons/episodes that have no videos
-    if (content.seasons) {
-      content.seasons = content.seasons
-        .map(season => ({
-          ...season,
-          episodes: season.episodes.filter(ep => ep.videos.length > 0),
-        }))
-        .filter(season => season.episodes.length > 0);
-    }
-
     if (content.type === 'MOVIE') {
       const avgRating = await prisma.rating.aggregate({
-        where: { contentId: id },
+        where: { contentId: content.id },
         _avg: { score: true },
       });
       return parseCastTags({ ...content, averageRating: avgRating._avg.score || 0 });
@@ -171,16 +161,6 @@ export const contentService = {
     });
 
     if (!content) throw new AppError('İçerik bulunamadı', 404);
-
-    // Remove seasons/episodes that have no videos
-    if (content.seasons) {
-      content.seasons = content.seasons
-        .map(season => ({
-          ...season,
-          episodes: season.episodes.filter((ep: any) => ep.videos.length > 0),
-        }))
-        .filter((season: any) => season.episodes.length > 0);
-    }
 
     if (content.type === 'MOVIE') {
       const avgRating = await prisma.rating.aggregate({
