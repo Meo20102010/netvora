@@ -18,8 +18,9 @@ export default function ContentCard({ item }: ContentCardProps) {
     MOVIE: t('content.type_movie'), SERIES: t('content.type_series'),
     DOCUMENTARY: t('content.type_documentary'), ANIMATION: t('content.type_animation'),
     STANDUP: t('content.type_standup'), ORIGINAL: t('content.type_original'),
+    ANIME: t('content.type_anime') || 'Anime',
   };
-  const href = `/${item.type === 'SERIES' ? 'series' : 'movie'}/${item.id}`;
+  const href = item.type === 'SERIES' ? `/series/${item.id}` : `/movie/${item.id}`;
 
   return (
     <Link href={href} className="group flex-none w-40 md:w-48 lg:w-52 relative">

@@ -12,6 +12,7 @@ import {
   HiCheckCircle, HiExclamationTriangle,
   HiShieldCheck,
   HiChatBubbleLeftEllipsis,
+  HiPlay,
 } from 'react-icons/hi2';
 import toast from 'react-hot-toast';
 import { useTranslation } from '@/i18n';
@@ -34,6 +35,7 @@ const navSections: NavSection[] = [
     items: [
       { href: '/admin/movies', label: 'admin.movies', icon: HiFilm },
       { href: '/admin/series', label: 'admin.series', icon: HiTv },
+      { href: '/admin/anime', label: 'Anime', icon: HiPlay },
       { href: '/admin/import', label: 'admin.import', icon: HiArrowDownTray },
       { href: '/admin/categories', label: 'admin.categories', icon: HiTag },
       { href: '/admin/media', label: 'admin.media_manager', icon: HiPhoto },

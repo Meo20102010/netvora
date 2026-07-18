@@ -162,6 +162,7 @@ export const adminApi = {
   deleteCategory: (id: string) => api.delete(`/admin/categories/${id}`),
   getMovies: (params?: any) => api.get('/admin/movies', { params }),
   getSeries: (params?: any) => api.get('/admin/series', { params }),
+  getAnime: (params?: any) => api.get('/admin/anime', { params }),
   broadcastNotification: (data: any) => api.post('/admin/notifications/broadcast', data),
   getNotifications: () => api.get('/admin/notifications'),
   createNotification: (data: any) => api.post('/admin/notifications', data),

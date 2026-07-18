@@ -7,7 +7,7 @@ export interface Profile {
   id: string; userId: string; name: string; avatar?: string; isChild: boolean; pinCode?: string; language: string;
 }
 export interface Content {
-  id: string; title: string; slug: string; description?: string; type: 'MOVIE'|'SERIES'|'DOCUMENTARY'|'ANIMATION'|'STANDUP'|'ORIGINAL';
+  id: string; title: string; slug: string; description?: string; type: 'MOVIE'|'SERIES'|'DOCUMENTARY'|'ANIMATION'|'STANDUP'|'ORIGINAL'|'ANIME';
   posterUrl?: string; coverUrl?: string; trailerUrl?: string; year?: number; duration?: number;
   imdbRating?: number; director?: string; cast: string[]; tags: string[]; country?: string; language?: string;
   quality: string; isActive: boolean; isFeatured: boolean; categoryId?: string; category?: Category;

@@ -15,7 +15,7 @@ export const loginSchema = z.object({
 
 export const contentSchema = z.object({
   title: z.string().min(1, 'Başlık gereklidir'),
-  type: z.enum(['MOVIE', 'SERIES', 'DOCUMENTARY', 'ANIMATION', 'STANDUP', 'ORIGINAL']),
+  type: z.enum(['MOVIE', 'SERIES', 'DOCUMENTARY', 'ANIMATION', 'STANDUP', 'ORIGINAL', 'ANIME']),
   description: z.string().optional(),
   posterUrl: z.string().url().optional().or(z.literal('')),
   coverUrl: z.string().url().optional().or(z.literal('')),

@@ -87,6 +87,7 @@ router.put('/subscriptions/:id', auditLog('UPDATE_SUBSCRIPTION', 'Subscription')
 
 router.get('/movies', adminController.getMovies);
 router.get('/series', adminController.getSeries);
+router.get('/anime', adminController.getAnime);
 
 router.get('/categories', adminController.getCategories);
 router.post('/categories', auditLog('CREATE_CATEGORY', 'Category'), adminController.createCategory);

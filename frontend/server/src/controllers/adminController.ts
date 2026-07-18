@@ -498,6 +498,44 @@ _count: {
     });
   }),
 
+  getAnime: asyncHandler(async (req: AuthRequest, res: Response) => {
+    const page = Math.max(1, parseInt(req.query.page as string) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit as string) || 20));
+    const skip = (page - 1) * limit;
+    const search = req.query.search as string;
+
+    const where: any = { type: 'ANIME' };
+    if (search) where.title = { contains: search };
+
+    const [data, total] = await Promise.all([
+      prisma.content.findMany({
+        where,
+        skip,
+        take: limit,
+        orderBy: { createdAt: 'desc' },
+        include: {
+          category: { select: { id: true, name: true, slug: true } },
+          seasons: {
+            include: {
+              episodes: {
+                include: { videos: true },
+                orderBy: { episodeNumber: 'asc' },
+              },
+            },
+            orderBy: { seasonNumber: 'asc' },
+          },
+        },
+      }),
+      prisma.content.count({ where }),
+    ]);
+
+    res.json({
+      success: true,
+      data: parseCastTags(data),
+      pagination: { page, limit, total, totalPages: Math.ceil(total / limit) },
+    });
+  }),
+
   getSeries: asyncHandler(async (req: AuthRequest, res: Response) => {
     const page = Math.max(1, parseInt(req.query.page as string) || 1);
     const limit = Math.min(100, Math.max(1, parseInt(req.query.limit as string) || 20));

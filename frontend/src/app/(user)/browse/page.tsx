@@ -32,6 +32,7 @@ export default function BrowsePage() {
   const [continueWatching, setContinueWatching] = useState<Content[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [categoryContent, setCategoryContent] = useState<Record<string, Content[]>>({});
+  const [animeItems, setAnimeItems] = useState<Content[]>([]);
   const [initialLoading, setInitialLoading] = useState(true);
 
   useEffect(() => {
@@ -41,14 +42,17 @@ export default function BrowsePage() {
           featuredRes,
           trendingRes,
           catsRes,
+          animeRes,
         ] = await Promise.allSettled([
           contentApi.getFeatured(),
           contentApi.getTrending(),
           contentApi.getCategories(),
+          contentApi.getAll({ type: 'ANIME', limit: 20 }),
         ]);
 
         if (featuredRes.status === 'fulfilled') setFeatured(featuredRes.value.data.data || []);
         if (trendingRes.status === 'fulfilled') setTrending(trendingRes.value.data.data || []);
+        if (animeRes.status === 'fulfilled') setAnimeItems(animeRes.value.data.data || []);
 
         let cats: Category[] = [];
         if (catsRes.status === 'fulfilled') {
@@ -161,6 +165,17 @@ export default function BrowsePage() {
                 </motion.div>
               );
             })}
+
+            {animeItems.length > 0 && (
+              <motion.div variants={rowFade}>
+                <ContentRow
+                  title="Animeler"
+                  items={animeItems}
+                  loading={initialLoading}
+                  seeAllLink="/browse/anime"
+                />
+              </motion.div>
+            )}
 
             {categories.length === 0 && (
               <>
