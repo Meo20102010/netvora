@@ -14,3 +14,5 @@ User-agent: CCBot
 Disallow: /
 
 Sitemap: https://netvora-green.vercel.app/sitemap.xml
+
+# deploy: 2026-07-18 23:10:03
