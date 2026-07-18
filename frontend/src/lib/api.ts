@@ -78,6 +78,7 @@ export const authApi = {
   resetPassword: (token: string, password: string) => api.post('/auth/reset-password', { token, password }),
   getMe: () => api.get('/auth/me'),
   updateProfile: (data: any) => api.put('/auth/profile', data),
+  googleLogin: (credential: string) => api.post('/auth/google', { credential }),
 };
 
 // Content

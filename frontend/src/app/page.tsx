@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
+import Script from 'next/script';
 import { useAuthStore } from '@/store/authStore';
 import { useTranslation } from '@/i18n';
 import { GlassCard, PageTransition, ParallaxSection, AnimatedCounter } from '@/components/ui';
@@ -54,6 +55,44 @@ export default function LandingPage() {
 
   return (
     <PageTransition>
+      <Script id="landing-seo" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Netvora',
+          url: 'https://netvora.com',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: 'https://netvora.com/search?q={search_term_string}',
+            'query-input': 'required name=search_term_string',
+          },
+          description: 'Netvora ile sınırsız film, dizi ve belgesel izleyin.',
+          inLanguage: 'tr',
+          publisher: {
+            '@type': 'Organization',
+            name: 'Netvora',
+            url: 'https://netvora.com',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://netvora.com/icon.jpg',
+            },
+          },
+        })}
+      </Script>
+      <Script id="faq-seo" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map(faq => ({
+            '@type': 'Question',
+            name: faq.q,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: faq.a,
+            },
+          })),
+        })}
+      </Script>
       <div className="min-h-screen bg-[#0a0a0a] overflow-hidden">
         {/* Animated gradient background */}
         <div className="fixed inset-0 -z-10">

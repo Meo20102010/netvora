@@ -1,3 +1,16 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /profiles
+Disallow: /account
+Disallow: /notifications
+Disallow: /watch/
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
 Sitemap: https://netvora.com/sitemap.xml

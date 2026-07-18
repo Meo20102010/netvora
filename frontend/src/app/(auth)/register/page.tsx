@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
@@ -8,10 +8,17 @@ import { useAuthStore } from '@/store/authStore';
 import { useTranslation } from '@/i18n';
 import { HiEye, HiEyeSlash, HiEnvelope, HiUser } from 'react-icons/hi2';
 
+declare global {
+  interface Window {
+    google?: { accounts: { id: { initialize: (config: any) => void; renderButton: (el: HTMLElement, config: any) => void; prompt: () => void } } };
+  }
+}
+
 export default function RegisterPage() {
   const { t } = useTranslation();
-  const { register } = useAuthStore();
+  const { register, googleLogin } = useAuthStore();
   const router = useRouter();
+  const googleBtnRef = useRef<HTMLDivElement>(null);
 
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -20,6 +27,33 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (window.google?.accounts?.id) {
+      window.google.accounts.id.initialize({
+        client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '',
+        callback: async (response: any) => {
+          try {
+            await googleLogin(response.credential);
+            toast.success('Kayıt başarılı!');
+            router.push('/browse');
+          } catch (err: any) {
+            toast.error('Google ile kayıt yapılamadı.');
+          }
+        },
+      });
+      if (googleBtnRef.current) {
+        window.google.accounts.id.renderButton(googleBtnRef.current, {
+          theme: 'filled_black',
+          size: 'large',
+          width: '100%',
+          text: 'signup_with',
+          shape: 'rectangular',
+          logo_alignment: 'left',
+        });
+      }
+    }
+  }, [googleLogin, router]);
 
   const validate = () => {
     if (!email || !username || !password || !confirmPassword) {
@@ -148,6 +182,14 @@ export default function RegisterPage() {
             </button>
           </form>
 
+          <div className="my-6 flex items-center gap-3">
+            <div className="flex-1 h-px bg-white/10" />
+            <span className="text-xs text-[#808080] uppercase tracking-wider">veya</span>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+
+          <div ref={googleBtnRef} className="w-full [&>div]:w-full [&>div>div]:w-full" />
+
           <p className="mt-6 text-center text-sm text-[#808080]">
             {t('auth.has_account')}{' '}
             <Link href="/login" className="text-white hover:text-[#E50914] transition-colors font-medium">
@@ -156,6 +198,8 @@ export default function RegisterPage() {
           </p>
         </div>
       </div>
+
+      <script src="https://accounts.google.com/gsi/client" async defer />
     </div>
   );
 }

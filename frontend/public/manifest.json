@@ -1,19 +1,30 @@
 {
   "name": "Netvora - Premium Dizi ve Film Platformu",
   "short_name": "Netvora",
-  "description": "Sınırsız film, dizi ve daha fazlası. Netvora ile premium eğlenceye hazır ol.",
+  "description": "Netvora ile sınırsız film, dizi ve belgesel izleyin. Premium kalitede, reklamsız ve kesintisiz eğlence deneyimi.",
   "start_url": "/browse",
   "display": "standalone",
   "background_color": "#141414",
   "theme_color": "#E50914",
   "orientation": "any",
-  "categories": ["entertainment", "video"],
+  "categories": ["entertainment", "video", "movies", "tv"],
   "lang": "tr",
   "dir": "ltr",
   "scope": "/",
+  "id": "/",
   "icons": [
-    { "src": "/icon.jpg", "sizes": "192x192", "type": "image/jpeg", "purpose": "any maskable" },
-    { "src": "/icon.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any maskable" }
+    {
+      "src": "/icon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
   ],
   "screenshots": [],
   "prefer_related_applications": false

@@ -1,10 +1,12 @@
 import { Router } from 'express';
 import { authController } from '../controllers/authController';
+import { googleAuthController } from '../controllers/googleAuthController';
 import { authLimiter } from '../middleware/rateLimiter';
 import { authenticate } from '../middleware/auth';
 
 const router = Router();
 
+router.post('/google', googleAuthController.googleLogin);
 router.post('/register', authLimiter, authController.register);
 router.post('/login', authLimiter, authController.login);
 router.post('/refresh-token', authController.refreshToken);
