@@ -60,10 +60,10 @@ export default function LandingPage() {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
           name: 'Netvora',
-          url: 'https://netvora.com',
+          url: 'https://netvora-green.vercel.app',
           potentialAction: {
             '@type': 'SearchAction',
-            target: 'https://netvora.com/search?q={search_term_string}',
+            target: 'https://netvora-green.vercel.app/search?q={search_term_string}',
             'query-input': 'required name=search_term_string',
           },
           description: 'Netvora ile sınırsız film, dizi ve belgesel izleyin.',
@@ -71,10 +71,10 @@ export default function LandingPage() {
           publisher: {
             '@type': 'Organization',
             name: 'Netvora',
-            url: 'https://netvora.com',
+            url: 'https://netvora-green.vercel.app',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://netvora.com/icon.jpg',
+              url: 'https://netvora-green.vercel.app/icon.jpg',
             },
           },
         })}

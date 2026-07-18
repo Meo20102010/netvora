@@ -60,7 +60,7 @@ export default function HelpPage() {
 
         <div className="mt-12 text-center">
           <p className="text-[#808080] mb-2">Başka bir sorunuz mu var?</p>
-          <a href="mailto:destek@netvora.com" className="text-[#E50914] hover:underline text-sm font-semibold">destek@netvora.com</a>
+          <a href="mailto:destek@netvora-green.vercel.app" className="text-[#E50914] hover:underline text-sm font-semibold">destek@netvora-green.vercel.app</a>
         </div>
       </main>
     </div>

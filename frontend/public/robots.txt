@@ -13,4 +13,4 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-Sitemap: https://netvora.com/sitemap.xml
+Sitemap: https://netvora-green.vercel.app/sitemap.xml

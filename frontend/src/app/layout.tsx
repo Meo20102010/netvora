@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 const siteName = 'Netvora';
 const title = 'Netvora - Premium Dizi ve Film Platformu';
 const description = 'Netvora ile sınırsız film, dizi ve belgesel izleyin. Premium kalitede, reklamsız ve kesintisiz eğlence deneyimi. Hemen ücretsiz üye olun.';
-const url = 'https://netvora.com';
+const url = 'https://netvora-green.vercel.app';
 
 export const metadata: Metadata = {
   title,
