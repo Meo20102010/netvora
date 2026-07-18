@@ -86,6 +86,7 @@ export const contentApi = {
   getAll: (params?: any) => api.get('/content', { params }),
   getFeatured: () => api.get('/content/featured'),
   getTrending: () => api.get('/content/trending'),
+  getCategories: () => api.get('/content/categories'),
   getById: (id: string) => api.get(`/content/${id}`),
   getBySlug: (slug: string) => api.get(`/content/slug/${slug}`),
   search: (params: any) => api.get('/content/search', { params }),

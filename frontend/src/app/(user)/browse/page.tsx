@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/i18n';
 import { contentApi, userApi } from '@/lib/api';
 import { Content } from '@/types';
 import Navbar from '@/components/Navbar';
@@ -20,18 +19,19 @@ const rowFade = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
-export default function BrowsePage() {
-  const { t } = useTranslation();
+interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  _count?: { contents: number };
+}
 
+export default function BrowsePage() {
   const [featured, setFeatured] = useState<Content[]>([]);
   const [trending, setTrending] = useState<Content[]>([]);
-  const [popularMovies, setPopularMovies] = useState<Content[]>([]);
-  const [popularSeries, setPopularSeries] = useState<Content[]>([]);
-  const [newReleases, setNewReleases] = useState<Content[]>([]);
-  const [documentaries, setDocumentaries] = useState<Content[]>([]);
-  const [animations, setAnimations] = useState<Content[]>([]);
   const [continueWatching, setContinueWatching] = useState<Content[]>([]);
-  const [hasSubscription, setHasSubscription] = useState(false);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [categoryContent, setCategoryContent] = useState<Record<string, Content[]>>({});
   const [initialLoading, setInitialLoading] = useState(true);
 
   useEffect(() => {
@@ -40,34 +40,41 @@ export default function BrowsePage() {
         const [
           featuredRes,
           trendingRes,
-          moviesRes,
-          seriesRes,
-          newRes,
-          docRes,
-          animRes,
-          subRes,
+          catsRes,
         ] = await Promise.allSettled([
           contentApi.getFeatured(),
           contentApi.getTrending(),
-          contentApi.getAll({ type: 'MOVIE', sortBy: 'imdbRating', limit: 20 }),
-          contentApi.getAll({ type: 'SERIES', sortBy: 'popularity', limit: 20 }),
-          contentApi.getAll({ sortBy: 'createdAt', limit: 20 }),
-          contentApi.getAll({ type: 'DOCUMENTARY', limit: 20 }),
-          contentApi.getAll({ type: 'ANIMATION', limit: 20 }),
-          userApi.getSubscription(),
+          contentApi.getCategories(),
         ]);
 
         if (featuredRes.status === 'fulfilled') setFeatured(featuredRes.value.data.data || []);
         if (trendingRes.status === 'fulfilled') setTrending(trendingRes.value.data.data || []);
-        if (moviesRes.status === 'fulfilled') setPopularMovies(moviesRes.value.data.data || []);
-        if (seriesRes.status === 'fulfilled') setPopularSeries(seriesRes.value.data.data || []);
-        if (newRes.status === 'fulfilled') setNewReleases(newRes.value.data.data || []);
-        if (docRes.status === 'fulfilled') setDocumentaries(docRes.value.data.data || []);
-        if (animRes.status === 'fulfilled') setAnimations(animRes.value.data.data || []);
-        if (subRes.status === 'fulfilled') {
-          const subData = subRes.value.data.data;
-          setHasSubscription(subData?.status === 'ACTIVE');
+
+        let cats: Category[] = [];
+        if (catsRes.status === 'fulfilled') {
+          cats = catsRes.value.data.data || [];
+          setCategories(cats);
         }
+
+        // Fetch content for each category in parallel
+        if (cats.length > 0) {
+          const catResults = await Promise.allSettled(
+            cats.map(cat =>
+              contentApi.getAll({ categoryId: cat.id, limit: 20 })
+                .then(res => ({ id: cat.id, data: res.data.data || [] }))
+            )
+          );
+          const map: Record<string, Content[]> = {};
+          catResults.forEach(r => {
+            if (r.status === 'fulfilled') map[r.value.id] = r.value.data;
+          });
+          setCategoryContent(map);
+        }
+
+        try {
+          const subRes = await userApi.getSubscription();
+          // subscription handled silently
+        } catch {}
       } catch (err) {
         console.error('Browse load error:', err);
       }
@@ -127,7 +134,7 @@ export default function BrowsePage() {
             {continueWatching.length > 0 && (
               <motion.div variants={rowFade}>
                 <ContentRow
-                  title={t('home.continue_watching')}
+                  title="Izlemeye Devam Et"
                   items={continueWatching}
                 />
               </motion.div>
@@ -135,53 +142,51 @@ export default function BrowsePage() {
 
             <motion.div variants={rowFade}>
               <ContentRow
-                title={t('home.trending')}
+                title="Gundemdekiler"
                 items={trending}
                 loading={initialLoading}
               />
             </motion.div>
 
-            <motion.div variants={rowFade}>
-              <ContentRow
-                title={t('home.popular_movies') || 'Popüler Filmler'}
-                items={popularMovies}
-                loading={initialLoading}
-                seeAllLink="/browse/movies"
-              />
-            </motion.div>
+            {categories.map(cat => {
+              const items = categoryContent[cat.id] || [];
+              return (
+                <motion.div key={cat.id} variants={rowFade}>
+                  <ContentRow
+                    title={cat.name}
+                    items={items}
+                    loading={initialLoading}
+                    seeAllLink={`/browse/category/${cat.slug}`}
+                  />
+                </motion.div>
+              );
+            })}
 
-            <motion.div variants={rowFade}>
-              <ContentRow
-                title={t('home.popular_series') || 'Popüler Diziler'}
-                items={popularSeries}
-                loading={initialLoading}
-                seeAllLink="/browse/series"
-              />
-            </motion.div>
-
-            <motion.div variants={rowFade}>
-              <ContentRow
-                title={t('home.new_releases')}
-                items={newReleases}
-                loading={initialLoading}
-              />
-            </motion.div>
-
-            <motion.div variants={rowFade}>
-              <ContentRow
-                title={t('home.documentaries') || 'Belgeseller'}
-                items={documentaries}
-                loading={initialLoading}
-              />
-            </motion.div>
-
-            <motion.div variants={rowFade}>
-              <ContentRow
-                title={t('home.animations') || 'Animasyon'}
-                items={animations}
-                loading={initialLoading}
-              />
-            </motion.div>
+            {categories.length === 0 && (
+              <>
+                <motion.div variants={rowFade}>
+                  <ContentRow
+                    title="Filmler"
+                    items={[]}
+                    loading={initialLoading}
+                  />
+                </motion.div>
+                <motion.div variants={rowFade}>
+                  <ContentRow
+                    title="Diziler"
+                    items={[]}
+                    loading={initialLoading}
+                  />
+                </motion.div>
+                <motion.div variants={rowFade}>
+                  <ContentRow
+                    title="Animeler"
+                    items={[]}
+                    loading={initialLoading}
+                  />
+                </motion.div>
+              </>
+            )}
           </motion.div>
         </main>
       </div>

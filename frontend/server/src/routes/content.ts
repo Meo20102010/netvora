@@ -7,6 +7,7 @@ const router = Router();
 router.get('/', optionalAuth, contentController.getAll);
 router.get('/featured', contentController.getFeatured);
 router.get('/trending', contentController.getTrending);
+router.get('/categories', contentController.getCategories);
 router.get('/search', contentController.search);
 router.get('/recommendations/:id', contentController.getRecommendations);
 router.get('/slug/:slug', contentController.getBySlug);

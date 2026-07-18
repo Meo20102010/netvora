@@ -1,5 +1,6 @@
 import { Response, NextFunction } from 'express';
 import { contentService } from '../services/contentService';
+import { prisma } from '../config/database';
 import { AuthRequest } from '../types';
 
 function asyncHandler(fn: (req: any, res: Response, next: NextFunction) => Promise<any>) {
@@ -62,5 +63,14 @@ export const contentController = {
       country: country as string,
     });
     res.json({ success: true, data: contents });
+  }),
+
+  getCategories: asyncHandler(async (req: AuthRequest, res: Response) => {
+    const categories = await prisma.category.findMany({
+      where: { isActive: true },
+      orderBy: { sortOrder: 'asc' },
+      include: { _count: { select: { contents: true } } },
+    });
+    res.json({ success: true, data: categories });
   }),
 };
