@@ -4,8 +4,30 @@ export function proxyImageUrl(url: string | undefined | null): string | undefine
   return url;
 }
 
+const EMBED_DOMAINS = [
+  'rapidvid.net',
+  'vidmoly.to',
+  'vidplay.net',
+  'vidsrc.to',
+  'trplayer.com',
+  'sobreatsesuyp.com',
+  'youtube.com',
+  'youtu.be',
+  'vimeo.com',
+  'dailymotion.com',
+  'ok.ru',
+  'vk.com',
+  'mail.ru',
+];
+
+function isEmbedUrl(url: string): boolean {
+  return EMBED_DOMAINS.some((d) => url.includes(d)) || url.includes('/embed') || url.includes('/iframe');
+}
+
 export function proxyVideoUrl(url: string | undefined | null): string | undefined {
   if (!url) return undefined;
+  // Embed URLs (iframes) must not be proxied; load directly in iframe
+  if (isEmbedUrl(url)) return url;
   if (url.startsWith('https://kanaldvod.duhnet.tv/')) return '/api/proxy/vod/' + url.slice('https://kanaldvod.duhnet.tv/'.length);
   if (url.startsWith('S') || url.startsWith('/S')) {
     const path = url.startsWith('/') ? url : '/' + url;
