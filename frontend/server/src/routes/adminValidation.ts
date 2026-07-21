@@ -122,24 +122,23 @@ export function adminValidationRoutes(prisma: PrismaClient): Router {
           if (activeVideos.length === 0) {
             issues.push('NO_ACTIVE_VIDEOS');
             stats.videosBroken++;
+            // Only disable when there are literally no videos. Fetch-based detection is unreliable
+            // from serverless IPs because many video hosts block datacenter ranges.
             if (disableBroken) disableIds.push(movie.id);
-          } else {
+          } else if (req.body.probeVideos) {
             const results = await Promise.all(
               activeVideos.map(async (v) => {
                 if (!v.url.startsWith('http')) return { ok: false, status: 0, reason: 'INVALID_URL' };
-                // Player embeds can block HEAD; use GET and look for player-ish response
                 const response = await fetchWithTimeout(v.url, 8000, 'GET');
-                const ok = response.ok;
-                return { id: v.id, url: v.url, ok, status: (response as any).status || 0 };
+                return { id: v.id, url: v.url, ok: response.ok, status: response.status };
               })
             );
             const broken = results.filter((r) => !r.ok);
             if (broken.length === activeVideos.length) {
-              issues.push('ALL_VIDEOS_BROKEN');
-              stats.videosBroken++;
-              if (disableBroken) disableIds.push(movie.id);
+              issues.push('ALL_VIDEOS_PROBE_FAILED');
+              // Report only; do not auto-disable based on probe because hosts often block servers.
             } else if (broken.length > 0) {
-              issues.push('SOME_VIDEOS_BROKEN');
+              issues.push('SOME_VIDEOS_PROBE_FAILED');
             }
           }
         }
@@ -296,6 +295,17 @@ export function adminValidationRoutes(prisma: PrismaClient): Router {
         },
       },
     });
+  }));
+
+  // ── Reset all movies to active (emergency undo) ──
+  router.post('/validate/reset-active', asyncHandler(async (req: AuthRequest, res: Response) => {
+    const { dryRun = true } = req.body;
+    const where = { type: 'MOVIE', isActive: false };
+    const count = await prisma.content.count({ where });
+    if (!dryRun) {
+      await prisma.content.updateMany({ where, data: { isActive: true } });
+    }
+    res.json({ success: true, data: { count, dryRun } });
   }));
 
   // ── Find and remove duplicate movies ──
