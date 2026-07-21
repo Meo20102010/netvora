@@ -46,7 +46,8 @@ app.use(cors({
 }));
 
 // Parsing — bodyParser: false in pages/api config lets Express handle this
-app.use(express.json({ limit: '10mb' }));
+// Note: JSON body parsing is handled by Next.js pages/api config.
+// express.json is intentionally omitted to avoid double-parsing the request stream.
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 

@@ -169,8 +169,8 @@ export function adminValidationRoutes(prisma: PrismaClient): Router {
           if (brokenImages.length > 0) {
             stats.imagesBroken++;
             issues.push(`BROKEN_IMAGES:${brokenImages.map((r) => r.type).join(',')}`);
-            if (brokenImages.some((r) => r.type === 'poster')) updateData.posterUrl = null;
-            if (brokenImages.some((r) => r.type === 'cover')) updateData.coverUrl = null;
+            // Do not clear poster/cover URLs based on server-side probe because many
+            // image hosts block datacenter IPs and return false negatives.
           }
         }
 
@@ -348,6 +348,88 @@ export function adminValidationRoutes(prisma: PrismaClient): Router {
         removed: idsToDelete.length,
         dryRun,
         groups: groups.slice(0, 50),
+      },
+    });
+  }));
+
+  // ── Restore poster/source URLs by re-scraping source list pages ──
+  router.post('/validate/restore-posters', asyncHandler(async (req: AuthRequest, res: Response) => {
+    const { cursor = 1, batchSize = 5 } = req.body;
+    let page = Math.max(1, parseInt(cursor) || 1);
+    const pagesPerBatch = Math.min(20, Math.max(1, parseInt(batchSize) || 5));
+    const endPage = 1149;
+
+    const restored: string[] = [];
+    const notFound: string[] = [];
+    let totalRestored = 0;
+    let totalProcessed = 0;
+
+    for (let i = 0; i < pagesPerBatch && page <= endPage; i++, page++) {
+      const url = page === 1 ? 'https://www.fullhdfilmizlesene.nz/' : `https://www.fullhdfilmizlesene.nz/yeni-filmler/${page}`;
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 20000);
+        const htmlRes = await fetch(url, {
+          signal: controller.signal,
+          headers: {
+            'User-Agent': USER_AGENT,
+            Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7',
+          },
+        });
+        clearTimeout(timer);
+        if (!htmlRes.ok) continue;
+        const html = await htmlRes.text();
+
+        // Parse <div class="film"> blocks
+        const filmRegex = /<div class="film">\s*<a class="tt" href="([^"]+)">[^<]*<\/a>\s*<h2 class="film-tt"><span class="film-title">([^<]+)<\/span>(?:\s*<span class="kt">([^<]*)<\/span>)?\s*<\/h2>[\s\S]*?<picture>[\s\S]*?<source data-srcset="([^"]+)"/g;
+        let m;
+        while ((m = filmRegex.exec(html)) !== null) {
+          const sourceUrl = m[1];
+          const title = m[2].trim();
+          const srcset = m[4];
+          // Extract large JPG from srcset: .../film-lg/...jpg 1.5x
+          const lgMatch = srcset.match(/(https:\/\/img\.fullhdfilmizlesene\.nz\/poster\/film-lg\/[^\s,]+\.jpg)/);
+          const posterUrl = lgMatch ? lgMatch[1] : null;
+
+          if (!title || !posterUrl) continue;
+          totalProcessed++;
+
+          // Find matching movie by title
+          const contents = await prisma.content.findMany({
+            where: { type: 'MOVIE', title: { equals: title, mode: 'insensitive' } },
+            select: { id: true, title: true },
+            take: 5,
+          });
+
+          if (contents.length === 0) {
+            notFound.push(title);
+            continue;
+          }
+
+          for (const content of contents) {
+            await prisma.content.update({
+              where: { id: content.id },
+              data: { posterUrl, coverUrl: posterUrl, sourceUrl },
+            });
+            totalRestored++;
+            restored.push(content.title);
+          }
+        }
+      } catch (e: any) {
+        // continue to next page
+      }
+    }
+
+    res.json({
+      success: true,
+      data: {
+        nextCursor: page > endPage ? null : page,
+        hasMore: page <= endPage,
+        totalProcessed,
+        totalRestored,
+        restoredSamples: restored.slice(0, 10),
+        notFoundSamples: notFound.slice(0, 10),
       },
     });
   }));

@@ -14,7 +14,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
 export const config = {
   api: {
-    bodyParser: false,
+    bodyParser: {
+      sizeLimit: '10mb',
+    },
     responseLimit: false,
   },
 };

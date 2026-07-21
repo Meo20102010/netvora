@@ -69,6 +69,7 @@ async function runBatchValidation() {
       disableBroken: true,
       fixMetadata: true,
       upgradeQuality: true,
+      probeVideos: false,
     });
 
     totalProcessed += result.processed;
@@ -136,6 +137,10 @@ async function main() {
   console.log('🔑 Logging in...');
   await login();
   console.log('✅ Logged in.');
+
+  console.log('\n🔄 Resetting all disabled movies to active before validation...');
+  const reset = await api('/admin/validate/reset-active', { dryRun: false });
+  console.log(`  Re-enabled ${reset.count} movies.`);
 
   const before = await getReport();
   console.log('\n📊 BEFORE:');
