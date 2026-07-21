@@ -64,21 +64,26 @@ async function fetchHtml(url, retries = 3) {
 }
 
 function extractPosterUrl(srcset) {
-  const lgMatch = srcset.match(/(https:\/\/img\.fullhdfilmizlesene\.nz\/poster\/film-lg\/[^\s,]+\.jpg)/);
-  return lgMatch ? lgMatch[1] : null;
+  // Prefer large JPG from img data-srcset; fallback to webp source srcset
+  let lgMatch = srcset.match(/(https:\/\/img\.fullhdfilmizlesene\.nz\/poster\/film-lg\/[^\s,]+\.jpg)/);
+  if (lgMatch) return lgMatch[1];
+  lgMatch = srcset.match(/(https:\/\/img\.fullhdfilmizlesene\.nz\/poster\/film-lg\/[^\s,]+\.webp)/);
+  if (lgMatch) return lgMatch[1];
+  return null;
 }
 
 function extractListItems(html) {
   const items = [];
-  // Use both <li class="film"> and <div class="film"> structures
-  const chunks = html.split(/<(?:li|div) class="film">/).slice(1);
-  for (const chunk of chunks) {
-    const endIdx = chunk.search(/<\/(?:li|div)>/);
-    if (endIdx === -1) continue;
-    const block = chunk.slice(0, endIdx);
+  // Match both <li class="film"> and <div class="film"> blocks
+  const blockRegex = /<(?:li|div) class="film">[\s\S]*?<\/(?:li|div)>/g;
+  let m;
+  while ((m = blockRegex.exec(html)) !== null) {
+    const block = m[0];
     const urlMatch = block.match(/<a class="tt" href="(https:\/\/www\.fullhdfilmizlesene\.nz\/film\/[^"]+)"/);
     const titleMatch = block.match(/<h2 class="film-tt"><span class="film-title">([^<]+)<\/span>/);
-    const srcsetMatch = block.match(/<source data-srcset="([^"]+)"/);
+    // Try img data-srcset first (contains JPGs), then source data-srcset (webp)
+    const imgSrcsetMatch = block.match(/<img[^>]*data-srcset="([^"]+)"/);
+    const srcsetMatch = imgSrcsetMatch || block.match(/<source data-srcset="([^"]+)"/);
     if (!urlMatch || !titleMatch || !srcsetMatch) continue;
     const posterUrl = extractPosterUrl(srcsetMatch[1]);
     if (!posterUrl) continue;
