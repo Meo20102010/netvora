@@ -23,11 +23,23 @@ export async function getContentById(id: string): Promise<Content | null> {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://netvora-green.vercel.app';
     const res = await fetch(`${baseUrl}/api/content/${encodeURIComponent(id)}`, {
-      next: { revalidate: 60 },
+      cache: 'no-store',
     });
     if (!res.ok) return null;
     const json = await res.json();
     return json.data || null;
+  } catch {
+    return null;
+  }
+}
+
+export async function getSlugById(id: string): Promise<{ slug: string; type: string } | null> {
+  try {
+    const row = await prisma.content.findUnique({
+      where: { id },
+      select: { slug: true, type: true },
+    });
+    return row || null;
   } catch {
     return null;
   }
