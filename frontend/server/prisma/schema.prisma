@@ -169,6 +169,7 @@ model Content {
   language    String?
   subtitle    String?
   quality     String   @default("HD")
+  sourceUrl   String?
   isActive    Boolean  @default(true)
   isFeatured  Boolean  @default(false)
   releaseDate DateTime?

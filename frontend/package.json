@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate --schema=server/prisma/schema.prisma",
+    "prebuild": "prisma migrate deploy --schema=server/prisma/schema.prisma",
     "db:push": "prisma db push --schema=server/prisma/schema.prisma",
     "db:seed": "npx ts-node --project server/tsconfig.json server/src/seed.ts",
     "db:studio": "prisma studio --schema=server/prisma/schema.prisma"

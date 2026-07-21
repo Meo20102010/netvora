@@ -249,6 +249,7 @@ async function createMovie(movie, stats) {
     country: movie.country,
     language: movie.language,
     quality: movie.quality,
+    sourceUrl: movie.sourceUrl,
     isFeatured: false,
     categoryId: filmCategoryId,
   };
@@ -322,6 +323,8 @@ async function main() {
   const args = process.argv.slice(2);
   const startPage = parseInt(args[0]) || 1;
   const endPage = parseInt(args[1]) || 10;
+  const stopOnEmpty = args.includes('--stop-on-empty');
+  const maxEmptyStreak = 3;
 
   console.log(`🔑 Logging in...`);
   await login();
@@ -330,10 +333,23 @@ async function main() {
 
   const stats = { added: 0, failed: 0, skipped: 0, existing: 0 };
   const startTime = Date.now();
+  let emptyStreak = 0;
 
   for (let page = startPage; page <= endPage; page++) {
     try {
-      await scrapePage(page, stats);
+      const count = await scrapePage(page, stats);
+      if (stopOnEmpty) {
+        if (count === 0) {
+          emptyStreak++;
+          console.log(`  ⚠️ Empty page ${page} (${emptyStreak}/${maxEmptyStreak})`);
+          if (emptyStreak >= maxEmptyStreak) {
+            console.log(`\n🏁 Reached end of catalog at page ${page}. Stopping.`);
+            break;
+          }
+        } else {
+          emptyStreak = 0;
+        }
+      }
     } catch (err) {
       console.log(`  ❌ Page ${page} error: ${err.message}`);
     }

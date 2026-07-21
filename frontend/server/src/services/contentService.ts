@@ -201,6 +201,7 @@ export const contentService = {
         language: data.language,
         subtitle: data.subtitle,
         quality: data.quality || 'HD',
+        sourceUrl: data.sourceUrl,
         isFeatured: data.isFeatured || false,
         releaseDate: data.releaseDate ? new Date(data.releaseDate) : undefined,
         categoryId: data.categoryId || undefined,
@@ -221,7 +222,7 @@ export const contentService = {
     const allowedFields = [
       'title', 'description', 'type', 'posterUrl', 'coverUrl', 'trailerUrl',
       'year', 'duration', 'imdbRating', 'imdbVotes', 'director', 'cast',
-      'tags', 'country', 'language', 'subtitle', 'quality', 'isActive',
+      'tags', 'country', 'language', 'subtitle', 'quality', 'sourceUrl', 'isActive',
       'isFeatured', 'releaseDate', 'categoryId',
     ];
 
