@@ -352,6 +352,48 @@ export function adminValidationRoutes(prisma: PrismaClient): Router {
     });
   }));
 
+  // ── Restore poster/source URLs from locally scraped items ──
+  router.post('/validate/restore-posters-bulk', asyncHandler(async (req: AuthRequest, res: Response) => {
+    const { items = [] } = req.body;
+    if (!Array.isArray(items) || items.length === 0) {
+      res.json({ success: true, data: { processed: 0, restored: 0, notFound: 0, error: 'empty items' } });
+      return;
+    }
+
+    let processed = 0;
+    let restored = 0;
+    let notFound = 0;
+
+    for (const item of items) {
+      const title = String(item.title || '').trim();
+      const posterUrl = String(item.posterUrl || '').trim();
+      const sourceUrl = String(item.sourceUrl || '').trim();
+      if (!title || !posterUrl) continue;
+      processed++;
+
+      const contents = await prisma.content.findMany({
+        where: { type: 'MOVIE', title: { equals: title, mode: 'insensitive' } },
+        select: { id: true, title: true },
+        take: 5,
+      });
+
+      if (contents.length === 0) {
+        notFound++;
+        continue;
+      }
+
+      for (const content of contents) {
+        await prisma.content.update({
+          where: { id: content.id },
+          data: { posterUrl, coverUrl: posterUrl, sourceUrl: sourceUrl || undefined },
+        });
+        restored++;
+      }
+    }
+
+    res.json({ success: true, data: { processed, restored, notFound } });
+  }));
+
   // ── Restore poster/source URLs by re-scraping source list pages ──
   router.post('/validate/restore-posters', asyncHandler(async (req: AuthRequest, res: Response) => {
     const { cursor = 1, batchSize = 5 } = req.body;
