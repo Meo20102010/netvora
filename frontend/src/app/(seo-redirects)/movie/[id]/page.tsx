@@ -1,11 +1,11 @@
 import { redirect, notFound } from 'next/navigation';
 import { getSlugById } from '@/lib/seo-fetch';
 
-interface MoviePageProps {
+interface MovieRedirectPageProps {
   params: { id: string };
 }
 
-export default async function MovieDetailPage({ params }: MoviePageProps) {
+export default async function MovieRedirectPage({ params }: MovieRedirectPageProps) {
   const content = await getSlugById(params.id);
 
   if (!content) {
