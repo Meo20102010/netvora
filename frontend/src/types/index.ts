@@ -11,7 +11,7 @@ export interface Content {
   posterUrl?: string; coverUrl?: string; trailerUrl?: string; year?: number; duration?: number;
   imdbRating?: number; director?: string; cast: string[]; tags: string[]; country?: string; language?: string;
   quality: string; isActive: boolean; isFeatured: boolean; categoryId?: string; category?: Category;
-  seasons?: Season[]; videos?: Video[]; createdAt: string; averageRating?: number;
+  seasons?: Season[]; videos?: Video[]; createdAt: string; updatedAt?: string; averageRating?: number;
 }
 export interface Season { id: string; contentId: string; seasonNumber: number; title?: string; episodes: Episode[]; }
 export interface Episode { id: string; seasonId: string; episodeNumber: number; title: string; description?: string; duration?: number; stillUrl?: string; videos?: Video[]; }

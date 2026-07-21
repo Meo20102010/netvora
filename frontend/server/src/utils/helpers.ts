@@ -1,13 +1,21 @@
 import { BASE_PRICE_TRY, CURRENCIES } from '../types';
 
+const TURKISH_CHAR_MAP: Record<string, string> = {
+  ç: 'c', ğ: 'g', ı: 'i', İ: 'i', ö: 'o', ş: 's', ü: 'u',
+  Ç: 'c', Ğ: 'g', Ö: 'o', Ş: 's', Ü: 'u',
+};
+
 export function slugify(text: string): string {
   return text
     .toString()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[çğıİöşüÇĞÖŞÜ]/g, (char) => TURKISH_CHAR_MAP[char] || char)
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w\-]+/g, '')
-    .replace(/\-\-+/g, '-')
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_]+/g, '-')
+    .replace(/-+/g, '-')
     .replace(/^-+/, '')
     .replace(/-+$/, '');
 }

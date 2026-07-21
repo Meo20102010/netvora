@@ -16,6 +16,7 @@ const description = 'Netvora ile sınırsız film, dizi ve belgesel izleyin. Pre
 const url = 'https://netvora-green.vercel.app';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(url),
   title,
   description,
   keywords: ['film izle', 'dizi izle', 'online film', 'premium yayın', 'netvora', 'bedava film', 'türkçe dizi', 'anime izle', 'belgesel', 'sinema'],
@@ -88,6 +89,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://img.fullhdfilmizlesene.nz" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://img.fullhdfilmizlesene.nz" />
         <link rel="dns-prefetch" href="https://accounts.google.com" />
       </head>
       <body className="bg-[#141414] text-white antialiased">

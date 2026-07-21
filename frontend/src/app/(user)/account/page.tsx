@@ -439,7 +439,7 @@ function ContinueWatch({ t }: { t: (k: string) => string }) {
             const pct = c.duration && item.progress ? Math.min((item.progress / (c.duration * 60)) * 100, 100) : 0;
             return (
               <motion.div key={i} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}>
-                <Link href={c.type === 'SERIES' ? `/series/${c.id}` : `/movie/${c.id}`} className="group block bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:border-white/[0.12] transition-all">
+                <Link href={c.type === 'SERIES' ? `/dizi/${c.slug}` : `/film/${c.slug}`} className="group block bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:border-white/[0.12] transition-all">
                   <div className="relative aspect-video">
                     {c.coverUrl || c.posterUrl ? <img src={c.coverUrl || c.posterUrl} alt="" className="w-full h-full object-cover" /> : <div className="w-full h-full bg-white/[0.04] flex items-center justify-center"><HiPlay className="w-12 h-12 text-white/10" /></div>}
                     <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">

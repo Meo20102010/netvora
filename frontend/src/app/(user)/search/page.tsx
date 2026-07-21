@@ -370,7 +370,7 @@ function SearchContent() {
                       <ContentCard item={item} />
                     ) : (
                       <GlassCard className="p-3" hover>
-                        <Link href={item.type === 'SERIES' ? `/series/${item.id}` : `/movie/${item.id}`}>
+                        <Link href={item.type === 'SERIES' ? `/dizi/${item.slug}` : `/film/${item.slug}`}>
                           <div className="flex gap-3 items-center">
                             <div className="relative w-20 h-14 rounded overflow-hidden bg-[#1f1f1f] shrink-0">
                               {item.posterUrl ? (

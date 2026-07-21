@@ -154,7 +154,7 @@ export default function HeroSection({ items }: HeroSectionProps) {
           {/* Actions */}
           <div className="flex items-center gap-3">
             <Link
-              href={`/${item.type === 'SERIES' ? 'series' : 'movie'}/${item.id}`}
+              href={item.type === 'SERIES' ? `/dizi/${item.slug}` : `/film/${item.slug}`}
               className="flex items-center gap-2 bg-[#E50914] hover:bg-[#f40612] text-white px-6 py-3 md:px-8 md:py-3.5 rounded font-bold text-sm md:text-base transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#E50914]/30"
             >
               <HiPlay className="w-5 h-5" />
