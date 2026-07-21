@@ -98,6 +98,7 @@ function isEmbedUrl(url: string): boolean {
     'vidsrc.to',
     'embed',
     'trplayer.com',
+    'turkeyplayer.com',
     'sobreatsesuyp.com',
     'youtube.com',
     'youtu.be',

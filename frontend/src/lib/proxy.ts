@@ -12,6 +12,7 @@ const EMBED_DOMAINS = [
   'vidplay.net',
   'vidsrc.to',
   'trplayer.com',
+  'turkeyplayer.com',
   'sobreatsesuyp.com',
   'youtube.com',
   'youtu.be',
