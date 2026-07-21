@@ -1,4 +1,4 @@
-const CACHE_NAME = 'netvora-v4';
+const CACHE_NAME = 'netvora-v5';
 const STATIC_ASSETS = [
   '/',
   '/browse',
@@ -27,21 +27,34 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
+
   const url = new URL(request.url);
 
+  // Only handle standard HTTP/HTTPS requests (skip chrome-extension, blob, data, etc.)
+  if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+
+  // Skip API and admin routes
   if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/admin/')) {
     return;
   }
 
   event.respondWith(
     caches.match(request).then((cached) => {
-      const fetched = fetch(request).then((response) => {
-        if (response.ok) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-        }
-        return response;
-      }).catch(() => cached);
+      const fetched = fetch(request)
+        .then((response) => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches
+              .open(CACHE_NAME)
+              .then((cache) => cache.put(request, clone))
+              .catch(() => {});
+          }
+          return response;
+        })
+        .catch(() => {
+          // Always return a valid Response; fallback to cached or a network-error response
+          return cached || new Response('Network error', { status: 408, statusText: 'Network Error' });
+        });
       return cached || fetched;
     })
   );

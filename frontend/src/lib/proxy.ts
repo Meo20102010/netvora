@@ -7,6 +7,8 @@ export function proxyImageUrl(url: string | undefined | null): string | undefine
 const EMBED_DOMAINS = [
   'rapidvid.net',
   'vidmoly.to',
+  'vidmoxy.net',
+  'vidmoxy.to',
   'vidplay.net',
   'vidsrc.to',
   'trplayer.com',

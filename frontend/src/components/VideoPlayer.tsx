@@ -1134,8 +1134,8 @@ export default function VideoPlayer({
           src={src}
           className="w-full h-full"
           allowFullScreen
-          allow="autoplay; encrypted-media"
-          sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+          allow="autoplay; encrypted-media; fullscreen"
+          sandbox="allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox"
         />
       </div>
     );
