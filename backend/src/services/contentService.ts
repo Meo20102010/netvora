@@ -73,7 +73,7 @@ export const contentService = {
             select: { id: true, name: true, slug: true },
           },
           _count: {
-            select: { watchHistory: true, ratings: true },
+            select: { watchHistory: true, ratings: true, videos: true },
           },
         },
       }),
@@ -282,6 +282,28 @@ export const contentService = {
 
     await prisma.content.delete({ where: { id } });
     return { message: 'İçerik başarıyla silindi' };
+  },
+
+  async getAudit() {
+    const allContent = await prisma.content.findMany({
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        type: true,
+        posterUrl: true,
+        _count: { select: { videos: true } },
+      },
+    });
+
+    const noVideo = allContent.filter(c => c._count.videos === 0);
+    const noPoster = allContent.filter(c => !c.posterUrl);
+
+    return {
+      total: allContent.length,
+      noVideo: { count: noVideo.length, items: noVideo.map(c => ({ id: c.id, title: c.title, slug: c.slug, type: c.type })) },
+      noPoster: { count: noPoster.length, items: noPoster.map(c => ({ id: c.id, title: c.title, slug: c.slug, type: c.type })) },
+    };
   },
 
   async getCategories() {

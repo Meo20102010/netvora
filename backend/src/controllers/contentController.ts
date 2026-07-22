@@ -33,6 +33,11 @@ export const contentController = {
     res.json({ success: true, data: content });
   }),
 
+  getAudit: asyncHandler(async (req: AuthRequest, res: Response) => {
+    const audit = await contentService.getAudit();
+    res.json({ success: true, data: audit });
+  }),
+
   getCategories: asyncHandler(async (req: AuthRequest, res: Response) => {
     const categories = await contentService.getCategories();
     res.json({ success: true, data: categories });

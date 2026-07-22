@@ -5,6 +5,7 @@ import { optionalAuth } from '../middleware/auth';
 const router = Router();
 
 router.get('/', optionalAuth, contentController.getAll);
+router.get('/audit', contentController.getAudit);
 router.get('/categories', contentController.getCategories);
 router.get('/featured', contentController.getFeatured);
 router.get('/trending', contentController.getTrending);
