@@ -75,10 +75,7 @@ export default function BrowsePage() {
           setCategoryContent(map);
         }
 
-        try {
-          const subRes = await userApi.getSubscription();
-          // subscription handled silently
-        } catch {}
+
       } catch (err) {
         console.error('Browse load error:', err);
       }

@@ -46,7 +46,8 @@ export default function SeriesDetailClient({ content, id, initialSeason, initial
   const [userRating, setUserRating] = useState(0);
   const [selectedSeason, setSelectedSeason] = useState(() => {
     if (initialSeason) return initialSeason;
-    return content.seasons?.[0]?.seasonNumber || 0;
+    if (content.seasons && content.seasons.length > 0) return content.seasons[0].seasonNumber;
+    return 0;
   });
   const [showSeasons, setShowSeasons] = useState(true);
   const [watchedEpisodes, setWatchedEpisodes] = useState<Set<string>>(new Set());

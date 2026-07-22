@@ -284,6 +284,19 @@ export const contentService = {
     return { message: 'İçerik başarıyla silindi' };
   },
 
+  async getCategories() {
+    const categories = await prisma.category.findMany({
+      where: { isActive: true },
+      orderBy: { sortOrder: 'asc' },
+      include: {
+        _count: {
+          select: { contents: { where: { isActive: true } } },
+        },
+      },
+    });
+    return parseCastTags(categories);
+  },
+
   async getFeatured() {
     const contents = await prisma.content.findMany({
       where: { isActive: true, isFeatured: true },
