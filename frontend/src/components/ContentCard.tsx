@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Content } from '@/types';
@@ -14,6 +14,13 @@ interface ContentCardProps {
 export default function ContentCard({ item }: ContentCardProps) {
   const { t } = useTranslation();
   const [imgError, setImgError] = useState(false);
+  const [isTouched, setIsTouched] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
   const typeLabels: Record<string, string> = {
     MOVIE: t('content.type_movie'), SERIES: t('content.type_series'),
     DOCUMENTARY: t('content.type_documentary'), ANIMATION: t('content.type_animation'),
@@ -21,9 +28,22 @@ export default function ContentCard({ item }: ContentCardProps) {
     ANIME: t('content.type_anime') || 'Anime',
   };
   const href = item.type === 'SERIES' ? `/dizi/${item.slug}` : `/film/${item.slug}`;
+  const genreTags = (item.tags || []).slice(0, 3);
+  const showOverlay = isTouchDevice ? isTouched : true;
+
+  const handleTouch = useCallback((e: React.TouchEvent) => {
+    if (isTouchDevice) {
+      e.preventDefault();
+      setIsTouched(prev => !prev);
+    }
+  }, [isTouchDevice]);
 
   return (
-    <Link href={href} className="group flex-none w-40 md:w-48 lg:w-52 relative">
+    <Link
+      href={href}
+      onClick={(e) => { if (isTouchDevice && !isTouched) { e.preventDefault(); setIsTouched(true); } }}
+      className="group flex-none w-40 md:w-48 lg:w-52 relative cursor-pointer"
+    >
       <div className="aspect-[2/3] rounded-lg overflow-hidden bg-[#1f1f1f] relative shadow-lg shadow-black/20 ring-1 ring-white/5 group-hover:ring-[#E50914]/30 transition-all duration-300">
         {item.posterUrl && !imgError ? (
           <Image
@@ -55,14 +75,16 @@ export default function ContentCard({ item }: ContentCardProps) {
         )}
 
         {/* Hover overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+        <div
+          className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent transition-opacity duration-300 flex flex-col justify-end p-4 ${showOverlay ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+        >
           <span className="text-xs font-semibold text-[#E50914] mb-1 drop-shadow">
             {typeLabels[item.type] || item.type}
           </span>
           <h3 className="text-sm font-bold text-white leading-tight mb-1 line-clamp-2 drop-shadow">
             {item.title}
           </h3>
-          <div className="flex items-center gap-3 text-xs text-[#b3b3b3] mb-2">
+          <div className="flex items-center gap-3 text-xs text-[#b3b3b3] mb-1">
             {item.year && <span>{item.year}</span>}
             {item.imdbRating && (
               <span className="flex items-center gap-1">
@@ -72,6 +94,25 @@ export default function ContentCard({ item }: ContentCardProps) {
             )}
             {item.duration && <span>{item.duration}{t('content.min_short')}</span>}
           </div>
+
+          {/* Genre tags */}
+          {genreTags.length > 0 && (
+            <div className="flex flex-wrap gap-1 mb-2">
+              {genreTags.map((tag) => (
+                <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-white/10 text-[#b3b3b3] rounded">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Description preview */}
+          {item.description && (
+            <p className="text-[10px] text-[#808080] leading-relaxed line-clamp-2 mb-2">
+              {item.description}
+            </p>
+          )}
+
           <span className="flex items-center gap-1.5 text-xs font-semibold text-white bg-[#E50914] hover:bg-[#f40612] px-3 py-1.5 rounded transition-all duration-200 w-fit shadow-lg shadow-[#E50914]/30">
             <HiPlay className="w-3 h-3" />
             {t('content.watch_now_short')}

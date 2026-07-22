@@ -8,13 +8,29 @@ import { motion } from 'framer-motion';
 import Script from 'next/script';
 import { useAuthStore } from '@/store/authStore';
 import { useTranslation } from '@/i18n';
-import { GlassCard, PageTransition, ParallaxSection, AnimatedCounter } from '@/components/ui';
-import { HiChevronDown, HiDevicePhoneMobile, HiTv, HiComputerDesktop } from 'react-icons/hi2';
+import { GlassCard, PageTransition, ParallaxSection } from '@/components/ui';
+import ContentRow from '@/components/ContentRow';
+import { contentApi } from '@/lib/api';
+import type { Content } from '@/types';
+import {
+  HiChevronDown, HiDevicePhoneMobile, HiTv, HiComputerDesktop,
+  HiBolt, HiShieldCheck, HiStar, HiPhoto, HiPlay,
+} from 'react-icons/hi2';
 
 const features = [
   { icon: HiTv, title: 'Her yerde izle', desc: 'TV, tablet, telefon ve bilgisayarında izle.' },
   { icon: HiDevicePhoneMobile, title: 'Çevrimdışı indir', desc: 'İndir ve mobil verin olmadan izle.' },
   { icon: HiComputerDesktop, title: 'Reklamsız', desc: 'Kesintisiz, reklamsız keyif.' },
+  { icon: HiBolt, title: 'Ultra HD / 4K', desc: 'En yüksek kalitede görüntü ve ses deneyimi.' },
+  { icon: HiPhoto, title: 'Hızlı yükleme', desc: 'Anlık açılış, donma ve tamponlama yok.' },
+  { icon: HiShieldCheck, title: 'Güvenli & Şifreli', desc: 'Kişisel verileriniz güvende, uçtan uca şifreli.' },
+];
+
+const testimonials = [
+  { name: 'Ayşe Yılmaz', avatar: 'A', rating: 5, text: 'Netvora ile dizi izlemek çok keyifli. Reklam yok, donma yok. Kesinlikle tavsiye ederim.' },
+  { name: 'Mehmet Demir', avatar: 'M', rating: 5, text: 'Film arşivi inanılmaz geniş. Her akşam yeni bir şey izliyorum. Fiyat/performans harika.' },
+  { name: 'Zeynep Kaya', avatar: 'Z', rating: 4, text: 'Çevrimdışı indirme özelliği çok iyi. Uzun yolculuklarda vazgeçilmezim oldu.' },
+  { name: 'Ali Öztürk', avatar: 'A', rating: 5, text: '4K kalitesinde film izlemek Netflix\'e taş çıkartır. Altyazı seçenekleri de çok iyi.' },
 ];
 
 const faqs = [
@@ -23,12 +39,8 @@ const faqs = [
   { q: 'Nerede izleyebilirim?', a: 'Netvora\'yı web tarayıcınız, akıllı telefonunuz, tabletiniz ve akıllı TV\'nizde izleyebilirsiniz.' },
   { q: 'Nasıl iptal ederim?', a: 'Hesap ayarlarından aboneliğinizi istediğiniz zaman iptal edebilirsiniz. İptal sonrası erişiminiz fatura dönemi sonuna kadar devam eder.' },
   { q: 'Çevrimdışı izleme var mı?', a: 'Evet, seçili içerikleri indirerek internet olmadan izleyebilirsiniz.' },
-];
-
-const stats = [
-  { value: 10000, suffix: '+', label: 'Film & Dizi' },
-  { value: 500000, suffix: '+', label: 'Kullanıcı' },
-  { value: 100, suffix: 'K', label: 'Saat İçerik' },
+  { q: 'Hangi kalitede izleyebilirim?', a: 'İnternet hızınıza bağlı olarak 480p\'den 4K Ultra HD\'ye kadar kalite seçeneği sunuyoruz.' },
+  { q: 'Kaç cihazda izleyebilirim?', a: 'Premium paketimizle aynı anda 4 farklı cihazda izleme imkanı sunuyoruz.' },
 ];
 
 const stagger = {
@@ -41,15 +53,46 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
+type SectionKey = 'trendingMovies' | 'newReleases' | 'popularMovies';
+
 export default function LandingPage() {
   const { t } = useTranslation();
   const { isAuthenticated } = useAuthStore();
   const router = useRouter();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [sections, setSections] = useState<Record<SectionKey, Content[]>>({
+    trendingMovies: [],
+    newReleases: [],
+    popularMovies: [],
+  });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (isAuthenticated) router.replace('/browse');
   }, [isAuthenticated, router]);
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const [trendingRes, newsRes, popularRes] = await Promise.all([
+          contentApi.getAll({ type: 'MOVIE', limit: 10, sort: 'trending' }),
+          contentApi.getAll({ type: 'MOVIE', limit: 10, sort: 'newest' }),
+          contentApi.getAll({ limit: 10, sort: 'popular' }),
+        ]);
+        const extract = (res: any) => (res.data?.data || res.data || []) as Content[];
+        setSections({
+          trendingMovies: extract(trendingRes),
+          newReleases: extract(newsRes),
+          popularMovies: extract(popularRes),
+        });
+      } catch {
+        // fallback empty
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, []);
 
   if (isAuthenticated) return null;
 
@@ -72,10 +115,7 @@ export default function LandingPage() {
             '@type': 'Organization',
             name: 'Netvora',
             url: 'https://netvora-green.vercel.app',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://netvora-green.vercel.app/icon.jpg',
-            },
+            logo: { '@type': 'ImageObject', url: 'https://netvora-green.vercel.app/icon.jpg' },
           },
         })}
       </Script>
@@ -86,10 +126,7 @@ export default function LandingPage() {
           mainEntity: faqs.map(faq => ({
             '@type': 'Question',
             name: faq.q,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: faq.a,
-            },
+            acceptedAnswer: { '@type': 'Answer', text: faq.a },
           })),
         })}
       </Script>
@@ -116,7 +153,6 @@ export default function LandingPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-[#0a0a0a]/40 to-[#0a0a0a]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#E50914]/20 via-transparent to-transparent" />
 
-          {/* Nav */}
           <motion.nav
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -139,7 +175,6 @@ export default function LandingPage() {
             </Link>
           </motion.nav>
 
-          {/* Hero content with parallax */}
           <ParallaxSection intensity={10} className="relative z-10 flex-1 flex items-center px-6 md:px-12">
             <div className="max-w-3xl">
               <motion.h1
@@ -158,10 +193,28 @@ export default function LandingPage() {
               >
                 {t('home.hero_desc')}
               </motion.p>
+
+              {/* Benefit bullets */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="flex flex-wrap gap-3 mb-8"
+              >
+                {['Reklamsız', 'HD/4K', 'Çevrimdışı', 'Tüm Cihazlar', 'İstediğin Zaman İptal'].map((b) => (
+                  <span key={b} className="flex items-center gap-1.5 text-sm text-[#b3b3b3] bg-white/[0.04] px-3 py-1.5 rounded-full border border-white/[0.06]">
+                    <svg className="w-3.5 h-3.5 text-[#E50914] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {b}
+                  </span>
+                ))}
+              </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.5 }}
+                transition={{ duration: 0.7, delay: 0.65 }}
               >
                 <Link
                   href="/register"
@@ -176,39 +229,61 @@ export default function LandingPage() {
             </div>
           </ParallaxSection>
 
-          {/* Scroll indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
             className="relative z-10 flex justify-center pb-8"
           >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            >
+            <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
               <HiChevronDown className="w-8 h-8 text-[#808080]" />
             </motion.div>
           </motion.div>
         </section>
 
-        {/* Stats */}
-        <section className="px-6 md:px-12 py-16 max-w-7xl mx-auto">
-          <div className="grid grid-cols-3 gap-6">
-            {stats.map((stat, i) => (
-              <GlassCard key={i} delay={i * 0.1} hover={false} className="p-6 text-center">
-                <AnimatedCounter
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  className="text-3xl md:text-4xl font-black text-[#E50914]"
+        {/* Content Rows */}
+        <section className="mt-8 space-y-4">
+          {loading ? (
+            <div className="px-6 md:px-12 space-y-4">
+              {[1, 2, 3].map((n) => (
+                <div key={n} className="animate-pulse">
+                  <div className="h-6 w-48 bg-white/5 rounded mb-4" />
+                  <div className="flex gap-2">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <div key={i} className="aspect-[2/3] w-40 md:w-48 lg:w-52 rounded-lg bg-white/5" />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <>
+              {sections.newReleases.length > 0 && (
+                <ContentRow
+                  title={'🔥 Yeni Eklenenler'}
+                  items={sections.newReleases}
+                  seeAllLink="/new-releases"
                 />
-                <p className="text-[#808080] text-sm mt-2">{stat.label}</p>
-              </GlassCard>
-            ))}
-          </div>
+              )}
+              {sections.trendingMovies.length > 0 && (
+                <ContentRow
+                  title={'📈 Trend Filmler'}
+                  items={sections.trendingMovies}
+                  seeAllLink="/trending"
+                />
+              )}
+              {sections.popularMovies.length > 0 && (
+                <ContentRow
+                  title={'⭐ Popüler İçerikler'}
+                  items={sections.popularMovies}
+                  seeAllLink="/popular"
+                />
+              )}
+            </>
+          )}
         </section>
 
-        {/* Features */}
+        {/* Neden Netvora */}
         <section className="px-6 md:px-12 py-20 max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -223,13 +298,13 @@ export default function LandingPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: '-100px' }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {features.map((f, i) => {
               const Icon = f.icon;
               return (
                 <motion.div key={i} variants={fadeUp}>
-                  <GlassCard delay={0} className="p-8 text-center">
+                  <GlassCard delay={0} className="p-8 text-center h-full">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#E50914]/10 flex items-center justify-center"
@@ -242,6 +317,54 @@ export default function LandingPage() {
                 </motion.div>
               );
             })}
+          </motion.div>
+        </section>
+
+        {/* Sosyal Kanıt */}
+        <section className="px-6 md:px-12 py-20 max-w-7xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-center mb-4"
+          >
+            Kullanıcılar <span className="text-[#E50914]">Ne Diyor</span>?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-[#808080] text-center mb-12 text-lg"
+          >
+            Binlerce memnun kullanıcıdan sadece birkaçı
+          </motion.p>
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: '-100px' }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {testimonials.map((t, i) => (
+              <motion.div key={i} variants={fadeUp}>
+                <GlassCard delay={0} className="p-6 h-full">
+                  <div className="flex items-center gap-1 mb-3">
+                    {Array.from({ length: t.rating }).map((_, s) => (
+                      <HiStar key={s} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-[#b3b3b3] leading-relaxed mb-4 line-clamp-4">
+                    &ldquo;{t.text}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3 mt-auto">
+                    <div className="w-9 h-9 rounded-full bg-[#E50914]/20 flex items-center justify-center text-sm font-bold text-[#E50914]">
+                      {t.avatar}
+                    </div>
+                    <span className="text-sm font-medium">{t.name}</span>
+                  </div>
+                </GlassCard>
+              </motion.div>
+            ))}
           </motion.div>
         </section>
 
@@ -262,7 +385,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
+                transition={{ delay: i * 0.05 }}
               >
                 <GlassCard hover={false} className="overflow-hidden">
                   <button
